@@ -1,0 +1,13 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\KTS InfoTech\SalesMate +\SalesMatePlus.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>E:\Projects\SYAM\KTS Projects\SalesMatePlus\Working Folder\SalesMatePlus\Source\Working Folder\SalesMatePlus___Win32_Debug_SMP_EVALUATION\SalesMatePlus.exe</StartProgram>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,2006 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (bf4c6aa8).
+//
+// SalesMatePlus.tlh
+//
+// C++ source equivalent of Win32 type library .\SMPTLBFile\SalesMatePlus.tlb
+// compiler-generated file created 01/18/18 at 12:15:41 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("b29eb38d-fffc-4872-ada2-bf73d67c3768"))
+/* dual interface */ ICustomer;
+struct __declspec(uuid("9496e290-0f06-4273-97e2-d6c217efac5a"))
+/* dual interface */ IItem;
+struct __declspec(uuid("7dc26416-07a8-4e7f-9ee5-a27a9ec8d56a"))
+/* dual interface */ ISmpReportItemAttributes;
+struct __declspec(uuid("616f863d-f514-4d2c-8f96-77e5cc7270d3"))
+/* dual interface */ IReports;
+struct __declspec(uuid("5a42d6bb-2599-4762-8fbd-2fe55a57fbf0"))
+/* interface */ ITansactionEvents;
+struct __declspec(uuid("eaae5ca7-3b1c-4014-8c37-6c5048e85509"))
+/* dual interface */ ISalesCheckout;
+struct __declspec(uuid("3c19a890-9a5e-4483-ad51-e7240ed53e45"))
+/* interface */ ISalesCheckoutEvents;
+struct __declspec(uuid("2521a1d1-899c-4a47-8bd1-32e9ff9a38ac"))
+/* dual interface */ ITransactions;
+struct __declspec(uuid("4ed71471-494e-4c62-90e6-6d43a578b653"))
+/* dual interface */ ISettings;
+struct __declspec(uuid("c40ada46-3e36-4775-ac05-d6b0606df069"))
+/* dual interface */ ISecurity;
+struct __declspec(uuid("bfd291ea-e432-46a2-b341-c1d97a1f26d0"))
+/* dual interface */ IDatabase;
+struct __declspec(uuid("2f3567a0-33a6-4170-bec6-c320a6a7bec0"))
+/* dual interface */ IGrid;
+struct __declspec(uuid("9f72e333-9060-49f3-af39-2dccade5cb14"))
+/* dual interface */ ISmpApp;
+struct __declspec(uuid("4763062e-d302-4128-bb0b-d241b72df888"))
+/* dual interface */ ISmpAddin;
+struct __declspec(uuid("f41c4b91-e7d3-4db7-b1a8-1fb7654aaab4"))
+/* dual interface */ IAccounts;
+struct __declspec(uuid("dcb4251d-3b3c-4a5b-9417-e1b82898a9e2"))
+/* dual interface */ IAccountsEvents;
+struct __declspec(uuid("c360e5f2-bde8-4c8e-b430-f52c2053f31e"))
+/* dual interface */ ISmpDialogEvents;
+struct __declspec(uuid("423e7504-d489-444f-bf09-0f236ea82ae9"))
+/* dual interface */ ISmpReport;
+struct __declspec(uuid("3efc8770-6fb0-40de-ad97-c6c8652d7dd7"))
+/* dual interface */ IISmpCommands;
+struct __declspec(uuid("fbf4770a-239a-48a4-9f1a-b25957ee0eed"))
+/* dual interface */ IISmpGenericReport;
+struct __declspec(uuid("c43bcd51-dc3d-4040-ae79-475898fad683"))
+/* dual interface */ ISmpView;
+struct __declspec(uuid("b32e691f-bebb-4561-8d67-9c2aa374554c"))
+/* dual interface */ ISmpPluginTab;
+struct __declspec(uuid("f9d1f9ad-33b7-4fc6-8d23-a9dafe36467d"))
+/* dual interface */ ICustomerEvents;
+struct __declspec(uuid("170b5b98-b54d-497b-838a-2711cdd5c3f0"))
+/* dual interface */ ISmpUser;
+struct /* coclass */ Customer;
+struct /* coclass */ Item;
+struct /* coclass */ Reports;
+struct /* coclass */ TansactionEvents;
+struct /* coclass */ SalesCheckout;
+struct /* coclass */ SalesCheckoutEvents;
+struct /* coclass */ Transactions;
+struct /* coclass */ Settings;
+struct /* coclass */ Security;
+struct /* coclass */ Database;
+struct /* coclass */ Grid;
+struct /* coclass */ SmpApp;
+struct /* coclass */ SmpAddin;
+struct /* coclass */ Accounts;
+struct /* coclass */ AccountsEvents;
+struct /* coclass */ SmpDialogEvents;
+struct /* coclass */ SmpReport;
+struct /* coclass */ ISmpCommands;
+struct /* coclass */ ISmpGenericReport;
+struct /* coclass */ SmpView;
+struct /* coclass */ SmpPluginTab;
+struct /* coclass */ CustomerEvents;
+struct __declspec(uuid("f36c5583-2650-4849-8ca3-f1dedc0ac54d"))
+/* dispinterface */ _ISmpUserEvents;
+struct __declspec(uuid("91f73f3f-4df0-4849-b7fb-0b1f8d41097f"))
+/* dual interface */ ISmpUserEvents;
+struct __declspec(uuid("ef4b25d3-4185-45c6-9e19-093c379ea1c3"))
+/* dual interface */ ISmpPluginTabEvents;
+struct __declspec(uuid("ada659fb-719e-4c25-9129-159367c4b632"))
+/* dual interface */ ISmpDialogExt;
+struct __declspec(uuid("5d0c5a85-4211-480f-a1a9-dd08381e6bcc"))
+/* dual interface */ ISmpReceiptSettings;
+struct __declspec(uuid("bc3d15cc-e9e0-440c-b41d-5f088232a3f8"))
+/* dual interface */ ISmpReportSettings;
+struct __declspec(uuid("878b7957-12e1-434f-93ce-32332aa0c427"))
+/* dual interface */ ISmpFrame;
+struct __declspec(uuid("2dbfe3a4-a17c-421f-821f-152fa87b18e1"))
+/* dual interface */ ISmpStock;
+struct __declspec(uuid("fe33ba4f-ae48-47e7-a9b4-511cfc638e68"))
+/* dual interface */ ISmpStockEvents;
+struct __declspec(uuid("600fcca6-c3fa-411a-b731-4cc8431e5366"))
+/* dual interface */ ISmpSetup;
+struct __declspec(uuid("91978b3c-5469-4a5c-ab1d-ba1822ca35bc"))
+/* dual interface */ ISmpSetupEvents;
+struct __declspec(uuid("0c88823f-623c-4537-8b87-c47f49ddc7ea"))
+/* dual interface */ ISmpFileMenuOperations;
+struct __declspec(uuid("613889fa-c397-4927-bf74-4d35c44386fb"))
+/* dual interface */ ISmpHelp;
+struct __declspec(uuid("06526a12-3815-4472-a98c-a73f92c565f3"))
+/* dual interface */ ISmpReportMenu;
+struct __declspec(uuid("02020bb8-574c-4d93-94c3-68a672648acc"))
+/* dual interface */ IISmpReportMenuEvents;
+struct __declspec(uuid("2b160279-6f39-49b4-9a01-b7c4aba979f9"))
+/* dual interface */ ISmpPropertySheet;
+struct __declspec(uuid("a991dfa2-cfb9-48f7-aa12-1f18eb6b8e96"))
+/* dual interface */ ISmpGrid;
+struct __declspec(uuid("af25b533-f143-4b99-841e-5458eff80af9"))
+/* dual interface */ ISmpOEM;
+struct __declspec(uuid("f6ec315e-09e8-4a3f-bf85-fd90b0354b05"))
+/* dual interface */ ISmpOEMEvents;
+struct __declspec(uuid("501f7527-d2f0-44ac-856b-ae73450a1e05"))
+/* dual interface */ ISmpSettingsEx;
+struct __declspec(uuid("75798720-a777-49c4-94c9-139dda4d2ac7"))
+/* dual interface */ ISmpGridCtrl;
+struct /* coclass */ SmpUser;
+struct /* coclass */ SmpUserEvents;
+struct /* coclass */ SmpPluginTabEvents;
+struct /* coclass */ SmpDialogExt;
+struct /* coclass */ SmpReceiptSettings;
+struct /* coclass */ SmpReportSettings;
+struct /* coclass */ SmpFrame;
+struct /* coclass */ SmpReportItemAttributes;
+struct /* coclass */ SmpStock;
+struct /* coclass */ SmpStockEvents;
+struct /* coclass */ SmpSetup;
+struct /* coclass */ SmpSetupEvents;
+struct /* coclass */ SmpFileMenuOperations;
+struct /* coclass */ SmpHelp;
+struct /* coclass */ SmpReportMenu;
+struct /* coclass */ ISmpReportMenuEvents;
+struct /* coclass */ SmpPropertySheet;
+struct /* coclass */ SmpGrid;
+struct /* coclass */ SmpOEM;
+struct /* coclass */ SmpOEMEvents;
+struct /* coclass */ SmpSettingsEx;
+struct /* coclass */ SmpGridCtrl;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ICustomer, __uuidof(ICustomer));
+_COM_SMARTPTR_TYPEDEF(IItem, __uuidof(IItem));
+_COM_SMARTPTR_TYPEDEF(ISmpReportItemAttributes, __uuidof(ISmpReportItemAttributes));
+_COM_SMARTPTR_TYPEDEF(IReports, __uuidof(IReports));
+_COM_SMARTPTR_TYPEDEF(ITansactionEvents, __uuidof(ITansactionEvents));
+_COM_SMARTPTR_TYPEDEF(ISalesCheckout, __uuidof(ISalesCheckout));
+_COM_SMARTPTR_TYPEDEF(ISalesCheckoutEvents, __uuidof(ISalesCheckoutEvents));
+_COM_SMARTPTR_TYPEDEF(ITransactions, __uuidof(ITransactions));
+_COM_SMARTPTR_TYPEDEF(ISettings, __uuidof(ISettings));
+_COM_SMARTPTR_TYPEDEF(ISecurity, __uuidof(ISecurity));
+_COM_SMARTPTR_TYPEDEF(IDatabase, __uuidof(IDatabase));
+_COM_SMARTPTR_TYPEDEF(IGrid, __uuidof(IGrid));
+_COM_SMARTPTR_TYPEDEF(ISmpApp, __uuidof(ISmpApp));
+_COM_SMARTPTR_TYPEDEF(ISmpAddin, __uuidof(ISmpAddin));
+_COM_SMARTPTR_TYPEDEF(IAccounts, __uuidof(IAccounts));
+_COM_SMARTPTR_TYPEDEF(IAccountsEvents, __uuidof(IAccountsEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpDialogEvents, __uuidof(ISmpDialogEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpReport, __uuidof(ISmpReport));
+_COM_SMARTPTR_TYPEDEF(IISmpCommands, __uuidof(IISmpCommands));
+_COM_SMARTPTR_TYPEDEF(IISmpGenericReport, __uuidof(IISmpGenericReport));
+_COM_SMARTPTR_TYPEDEF(ISmpView, __uuidof(ISmpView));
+_COM_SMARTPTR_TYPEDEF(ISmpPluginTab, __uuidof(ISmpPluginTab));
+_COM_SMARTPTR_TYPEDEF(ICustomerEvents, __uuidof(ICustomerEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpUser, __uuidof(ISmpUser));
+_COM_SMARTPTR_TYPEDEF(_ISmpUserEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(ISmpUserEvents, __uuidof(ISmpUserEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpPluginTabEvents, __uuidof(ISmpPluginTabEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpDialogExt, __uuidof(ISmpDialogExt));
+_COM_SMARTPTR_TYPEDEF(ISmpReceiptSettings, __uuidof(ISmpReceiptSettings));
+_COM_SMARTPTR_TYPEDEF(ISmpReportSettings, __uuidof(ISmpReportSettings));
+_COM_SMARTPTR_TYPEDEF(ISmpFrame, __uuidof(ISmpFrame));
+_COM_SMARTPTR_TYPEDEF(ISmpStock, __uuidof(ISmpStock));
+_COM_SMARTPTR_TYPEDEF(ISmpStockEvents, __uuidof(ISmpStockEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpSetup, __uuidof(ISmpSetup));
+_COM_SMARTPTR_TYPEDEF(ISmpSetupEvents, __uuidof(ISmpSetupEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpFileMenuOperations, __uuidof(ISmpFileMenuOperations));
+_COM_SMARTPTR_TYPEDEF(ISmpHelp, __uuidof(ISmpHelp));
+_COM_SMARTPTR_TYPEDEF(ISmpReportMenu, __uuidof(ISmpReportMenu));
+_COM_SMARTPTR_TYPEDEF(IISmpReportMenuEvents, __uuidof(IISmpReportMenuEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpPropertySheet, __uuidof(ISmpPropertySheet));
+_COM_SMARTPTR_TYPEDEF(ISmpGrid, __uuidof(ISmpGrid));
+_COM_SMARTPTR_TYPEDEF(ISmpOEM, __uuidof(ISmpOEM));
+_COM_SMARTPTR_TYPEDEF(ISmpOEMEvents, __uuidof(ISmpOEMEvents));
+_COM_SMARTPTR_TYPEDEF(ISmpSettingsEx, __uuidof(ISmpSettingsEx));
+_COM_SMARTPTR_TYPEDEF(ISmpGridCtrl, __uuidof(ISmpGridCtrl));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("b29eb38d-fffc-4872-ada2-bf73d67c3768"))
+ICustomer : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall GetCustomerDetails (
+        BSTR strCustomerID,
+        BSTR strFieldName,
+        VARIANT * pvarVal ) = 0;
+    virtual HRESULT __stdcall InvokeFindCustomerDlg (
+        BSTR * pCustomerID ) = 0;
+};
+
+struct __declspec(uuid("9496e290-0f06-4273-97e2-d6c217efac5a"))
+IItem : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_HAlign (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HAlign (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Row (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Row (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Col (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Col (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_MaxRow (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_MaxRow (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_MaxCol (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_MaxCol (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Content (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Content (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_ContentType (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ContentType (
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("7dc26416-07a8-4e7f-9ee5-a27a9ec8d56a"))
+ISmpReportItemAttributes : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ForgroundColor (
+        OLE_COLOR * pVal ) = 0;
+    virtual HRESULT __stdcall put_ForgroundColor (
+        OLE_COLOR pVal ) = 0;
+    virtual HRESULT __stdcall get_BackgroundColor (
+        OLE_COLOR * pVal ) = 0;
+    virtual HRESULT __stdcall put_BackgroundColor (
+        OLE_COLOR pVal ) = 0;
+    virtual HRESULT __stdcall get_HeadingFont (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeadingFont (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_HeadingFontSize (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeadingFontSize (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NormalFontSize (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NormalFontSize (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterFont (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_FooterFont (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterFontSize (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_FooterFontSize (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_HeadingBold (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeadingBold (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NormalBold (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NormalBold (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NormalItalic (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NormalItalic (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterBold (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_FooterBold (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterItalic (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_FooterItalic (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ImagePath (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_ImagePath (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_ImageRowPosition (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ImageRowPosition (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ImageColumnPosition (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ImageColumnPosition (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ShowImage (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ShowImage (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ShowHeading (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ShowHeading (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall GetMarginInfo (
+        long * lLeft,
+        long * lRight,
+        long * lTop,
+        long * lBottom ) = 0;
+    virtual HRESULT __stdcall SetMarginInfo (
+        long lLeft,
+        long lRight,
+        long lTop,
+        long lBottom ) = 0;
+    virtual HRESULT __stdcall get_ItemCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ItemCount (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_Item (
+        long lArrayIndex,
+        struct IItem * * pVal ) = 0;
+    virtual HRESULT __stdcall put_Item (
+        long lArrayIndex,
+        struct IItem * pVal ) = 0;
+    virtual HRESULT __stdcall get_NormalFont (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_NormalFont (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_HeadingItalics (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeadingItalics (
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("616f863d-f514-4d2c-8f96-77e5cc7270d3"))
+IReports : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall FillReport (
+        VARIANT strSQLQuery ) = 0;
+    virtual HRESULT __stdcall FillReportWithCaption (
+        VARIANT strSQLQuery,
+        VARIANT strCaption ) = 0;
+    virtual HRESULT __stdcall FillReportEx (
+        BSTR strQuery,
+        BSTR strHeading,
+        BSTR strAdditionalHeading,
+        long bShowHeader,
+        long bShowFooter ) = 0;
+};
+
+struct __declspec(uuid("5a42d6bb-2599-4762-8fbd-2fe55a57fbf0"))
+ITansactionEvents : IUnknown
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnAddTransaction (
+        BSTR strTransactionID ) = 0;
+    virtual HRESULT __stdcall OnEditTransaction (
+        BSTR strTransactionID ) = 0;
+    virtual HRESULT __stdcall OnDeleteTransaction (
+        BSTR strTansactionID ) = 0;
+};
+
+struct __declspec(uuid("eaae5ca7-3b1c-4014-8c37-6c5048e85509"))
+ISalesCheckout : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeSalesCheckoutDlg ( ) = 0;
+};
+
+struct __declspec(uuid("3c19a890-9a5e-4483-ad51-e7240ed53e45"))
+ISalesCheckoutEvents : IUnknown
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnCheckout (
+        BSTR strSalesTransID ) = 0;
+};
+
+struct __declspec(uuid("2521a1d1-899c-4a47-8bd1-32e9ff9a38ac"))
+ITransactions : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeAddTransactionDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeEditTransactionDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCancelTransactionDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeAddMiscIncomeDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeAddMiscExpenseDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeEditMiscIncomeDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeEditMiscExpenseDlg ( ) = 0;
+};
+
+struct __declspec(uuid("4ed71471-494e-4c62-90e6-6d43a578b653"))
+ISettings : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_DateFormat (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_PaymentMethod (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_PaymentMethod (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_NoOfDisplayRecords (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_UseEnterKey (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_DefaultMembershipFee (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall get_DefaultSecurityDeposit (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall get_PictureFolder (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_LaunchOnStartup (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AutomaticBackup (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_OverrideExDataOnAB (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AutomaticCompact (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall CompactDatabase ( ) = 0;
+    virtual HRESULT __stdcall get_CurrencySymbol (
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("c40ada46-3e36-4775-ac05-d6b0606df069"))
+ISecurity : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall GetUserRightsInfo (
+        BSTR strUserID,
+        BSTR * pStrUserSecurityData ) = 0;
+    virtual HRESULT __stdcall get_CurrentLoginUser (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_DatabaseRight (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AccessSetup (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AccessSalesMenu (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AccessCustomerMenu (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AccessTransactionMenu (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintReports (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ViewReports (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_UpdateShopBalance (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall get_CurrentUserRights (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_UserRightInfo (
+        BSTR strXMLModuleName,
+        BSTR strModuleSection,
+        BSTR strLeafSecurityNodeName,
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("bfd291ea-e432-46a2-b341-c1d97a1f26d0"))
+IDatabase : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ConnectionInterface (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall ExecuteQuery (
+        BSTR strQuery,
+        VARIANT * pQueryResult ) = 0;
+    virtual HRESULT __stdcall ExecuteQueryEx (
+        BSTR strQuery,
+        VARIANT * pQueryResult ) = 0;
+    virtual HRESULT __stdcall get_IsMSAccess (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_DBPath (
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("2f3567a0-33a6-4170-bec6-c320a6a7bec0"))
+IGrid : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall ResetGrid ( ) = 0;
+    virtual HRESULT __stdcall get_NoOfRows (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NoOfRows (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NoOfColumns (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NoOfColumns (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_CellText (
+        long lRow,
+        long lCol,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellText (
+        long lRow,
+        long lCol,
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_CellColour (
+        long lRow,
+        long lCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellColour (
+        long lRow,
+        long lCol,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_HorizondalGridLine (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HorizondalGridLine (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_VerticalGridLine (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_VerticalGridLine (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NoOfFixedRows (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NoOfFixedRows (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_NoOfFixedColumns (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_NoOfFixedColumns (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_CellFontSize (
+        long lRow,
+        long lCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellFontSize (
+        long lRow,
+        long lCol,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_CellFontType (
+        long lRow,
+        long lCol,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellFontType (
+        long lRow,
+        long lCol,
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall InsertRow (
+        long lRow ) = 0;
+    virtual HRESULT __stdcall InsertColumn (
+        long lColumn ) = 0;
+    virtual HRESULT __stdcall DeleteRow (
+        long lRow ) = 0;
+    virtual HRESULT __stdcall DeleteColumn (
+        long lCol ) = 0;
+    virtual HRESULT __stdcall get_CellTextColour (
+        long lRow,
+        long lCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellTextColour (
+        long lRow,
+        long lCol,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_RowHeight (
+        long lRow,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_RowHeight (
+        long lRow,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ColumnWidth (
+        long lCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ColumnWidth (
+        long lCol,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_CellFont (
+        long lRow,
+        long lCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_CellFont (
+        long lRow,
+        long lCol,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ReadOnly (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ReadOnly (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall MergeCells (
+        long lStartRow,
+        long lStartCol,
+        long lEndRow,
+        long lEndCol ) = 0;
+    virtual HRESULT __stdcall UnmergeCells (
+        long lStartRow,
+        long lStartCol,
+        long lEndRow,
+        long lEndCol ) = 0;
+    virtual HRESULT __stdcall get_WindowHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall PrintContents (
+        long lContentType ) = 0;
+};
+
+struct __declspec(uuid("9f72e333-9060-49f3-af39-2dccade5cb14"))
+ISmpApp : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall SetAddInInfo (
+        long lSessionID,
+        long lInstanceHandle,
+        BSTR strXMLMenuToolbarIDCmdInfo,
+        long lToobarResSmall,
+        long lToobarResBig ) = 0;
+    virtual HRESULT __stdcall SendStatus (
+        BSTR strStatus ) = 0;
+    virtual HRESULT __stdcall get_WindowHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall SetAddinSecurityInfo (
+        long lSessionID,
+        BSTR strSecurityInfo ) = 0;
+    virtual HRESULT __stdcall get_IsRegistered (
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("4763062e-d302-4128-bb0b-d241b72df888"))
+ISmpAddin : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall Initialize (
+        long lSessionID,
+        struct ISmpApp * pApp,
+        VARIANT bFirstTime ) = 0;
+    virtual HRESULT __stdcall Uninitialize (
+        long lSessionID ) = 0;
+    virtual HRESULT __stdcall InitializeDatabase (
+        long lSessionID,
+        long * plStatus ) = 0;
+    virtual HRESULT __stdcall UpdateAddinCmdUI (
+        long lCommandID,
+        long * pbEnable ) = 0;
+    virtual HRESULT __stdcall DeleteOldData (
+        BSTR strSpecifiedDate ) = 0;
+    virtual HRESULT __stdcall ApplicationLaunched ( ) = 0;
+    virtual HRESULT __stdcall InvokeAboutBox ( ) = 0;
+    virtual HRESULT __stdcall CheckCredentials (
+        BSTR * pStrOrganizationName,
+        BSTR * pStrKey ) = 0;
+};
+
+struct __declspec(uuid("f41c4b91-e7d3-4db7-b1a8-1fb7654aaab4"))
+IAccounts : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeAcceptPaymentDialog (
+        VARIANT varCustomerID ) = 0;
+    virtual HRESULT __stdcall AddToShopBalance (
+        double dBalanceToAdd ) = 0;
+    virtual HRESULT __stdcall SubstractFromShopBalance (
+        double dBalanceToSubstract ) = 0;
+    virtual HRESULT __stdcall InvokeRefundToCustomerDlg (
+        VARIANT varCustomerID ) = 0;
+};
+
+struct __declspec(uuid("dcb4251d-3b3c-4a5b-9417-e1b82898a9e2"))
+IAccountsEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnTransactionAccountDetails (
+        long lType,
+        VARIANT varValue1,
+        VARIANT varValue2,
+        VARIANT varValue3,
+        VARIANT varValue4 ) = 0;
+    virtual HRESULT __stdcall OnAccountReport (
+        long lReportType,
+        BSTR strValue1,
+        BSTR strValue2,
+        VARIANT varGenericReport ) = 0;
+    virtual HRESULT __stdcall AddAdvancedReportPage (
+        long lReportType,
+        VARIANT pSheet ) = 0;
+};
+
+struct __declspec(uuid("c360e5f2-bde8-4c8e-b430-f52c2053f31e"))
+ISmpDialogEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnDialogWndProc (
+        VARIANT hWndHandle,
+        long lDialogID,
+        long message,
+        VARIANT wParam,
+        VARIANT lParam,
+        long lDialogeType ) = 0;
+};
+
+struct __declspec(uuid("423e7504-d489-444f-bf09-0f236ea82ae9"))
+ISmpReport : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall ResetContent ( ) = 0;
+    virtual HRESULT __stdcall SetHeaderInfo (
+        BSTR strMainHeading1,
+        BSTR strSubHeading1,
+        BSTR strMainHeading2,
+        BSTR strSubHeading2,
+        BSTR strHeaderImagePath ) = 0;
+    virtual HRESULT __stdcall SetFooterInfo (
+        BSTR strFooter1,
+        BSTR strFooter2,
+        BSTR strFooter3 ) = 0;
+    virtual HRESULT __stdcall GetHeaderInfo (
+        BSTR * pMainHeading1,
+        BSTR * pSubHeading1,
+        BSTR * pMainHeading2,
+        BSTR * pSubHeading2,
+        BSTR * pHeaderImagePath ) = 0;
+    virtual HRESULT __stdcall GetFooterInfo (
+        BSTR * pFooter1,
+        BSTR * pFooter2,
+        BSTR * pFooter3 ) = 0;
+    virtual HRESULT __stdcall SetHeaderFormat (
+        BSTR strFont,
+        long iSize,
+        long Color ) = 0;
+    virtual HRESULT __stdcall SetBodyFormat (
+        BSTR strFont,
+        long iSize,
+        long Color ) = 0;
+    virtual HRESULT __stdcall SetFooterFormat (
+        BSTR strFont,
+        long iSize,
+        long Color ) = 0;
+    virtual HRESULT __stdcall GetHeaderFormat (
+        BSTR * strFont,
+        long * piSize,
+        long * piColor ) = 0;
+    virtual HRESULT __stdcall GetBodyFormat (
+        BSTR * strFont,
+        long * piSize,
+        long * piColor ) = 0;
+    virtual HRESULT __stdcall GetFooterFormat (
+        BSTR * strFont,
+        long * piSize,
+        long * piColor ) = 0;
+    virtual HRESULT __stdcall FillReport (
+        BSTR strSQLQuery ) = 0;
+    virtual HRESULT __stdcall PrintReport ( ) = 0;
+};
+
+struct __declspec(uuid("3efc8770-6fb0-40de-ad97-c6c8652d7dd7"))
+IISmpCommands : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_MenuString (
+        long lSessionID,
+        long iCommandID,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_MenuCommandID (
+        long lSessionID,
+        BSTR strMenuStrings,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_MenuCommandEx (
+        long lSessionID,
+        BSTR strFunctionName,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_NoOfCommands (
+        long lSessionID,
+        BSTR strFunctionName,
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("fbf4770a-239a-48a4-9f1a-b25957ee0eed"))
+IISmpGenericReport : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall RemoveAllContents ( ) = 0;
+    virtual HRESULT __stdcall RemoveLastFooterContent ( ) = 0;
+    virtual HRESULT __stdcall AddMergeInfo (
+        int iRow,
+        int iCol,
+        int iMaxRow,
+        int iMaxCol,
+        BSTR strText ) = 0;
+    virtual HRESULT __stdcall RemoveBodyContents ( ) = 0;
+    virtual HRESULT __stdcall SetBodySize (
+        long lBodySize ) = 0;
+    virtual HRESULT __stdcall SetFooterSize (
+        long lFoterSize ) = 0;
+    virtual HRESULT __stdcall SetHeaderSize (
+        long lHeaderSize ) = 0;
+    virtual HRESULT __stdcall RemoveFooterContents ( ) = 0;
+    virtual HRESULT __stdcall RemoveHeaderContents ( ) = 0;
+    virtual HRESULT __stdcall AddFooterContents (
+        int iSatrtRow,
+        int iStartCol,
+        int iEndRow,
+        int iEndCol,
+        BSTR strFooterContents,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall AddReportHeading (
+        int iStartRow,
+        int iStartCol,
+        int iEndRow,
+        int iEndCol,
+        BSTR strHeading,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall AddBodyContents (
+        int iStartRow,
+        int iStartCol,
+        int iEndRow,
+        int iEndCol,
+        BSTR strBodyContents,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall AddReportHeadingEx (
+        int iRow,
+        int iCol,
+        BSTR strHeading,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall AddBodyContentsEx (
+        int iRow,
+        int iCol,
+        BSTR strBodyContents,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall SetHeaderMargin (
+        int iLeft,
+        int iRight,
+        int iTop,
+        int iBottom ) = 0;
+    virtual HRESULT __stdcall AddFooterContentsEx (
+        int iRow,
+        int iCol,
+        BSTR strFooterContents,
+        long dwAlign,
+        long ContentType ) = 0;
+    virtual HRESULT __stdcall FillReport ( ) = 0;
+    virtual HRESULT __stdcall get_ReportType (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ReportType (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_GenericReportObj (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall SetGenericReportObj (
+        VARIANT varGenericReport ) = 0;
+    virtual HRESULT __stdcall get_HeaderCellArrayCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_BodyCellArrayCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterCellArrayCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_HeaderItem (
+        long lIndex,
+        struct IItem * * pVal ) = 0;
+    virtual HRESULT __stdcall get_BodyItem (
+        long lIndex,
+        struct IItem * * pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterItem (
+        long lIndex,
+        struct IItem * * pVal ) = 0;
+    virtual HRESULT __stdcall get_HeadingItalic (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeadingItalic (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_HeaderProperties (
+        struct ISmpReportItemAttributes * * pVal ) = 0;
+    virtual HRESULT __stdcall put_HeaderProperties (
+        struct ISmpReportItemAttributes * pVal ) = 0;
+    virtual HRESULT __stdcall get_BodyProperties (
+        struct ISmpReportItemAttributes * * pVal ) = 0;
+    virtual HRESULT __stdcall put_BodyProperties (
+        struct ISmpReportItemAttributes * pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterProperties (
+        struct ISmpReportItemAttributes * * pVal ) = 0;
+    virtual HRESULT __stdcall put_FooterProperties (
+        struct ISmpReportItemAttributes * pVal ) = 0;
+    virtual HRESULT __stdcall get_GenericReportProperties (
+        struct ISmpReportItemAttributes * * pVal ) = 0;
+    virtual HRESULT __stdcall put_GenericReportProperties (
+        struct ISmpReportItemAttributes * pVal ) = 0;
+    virtual HRESULT __stdcall get_ItemCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ItemCount (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_MergeCellProperties (
+        struct ISmpReportItemAttributes * * pVal ) = 0;
+    virtual HRESULT __stdcall put_MergeCellProperties (
+        struct ISmpReportItemAttributes * pVal ) = 0;
+};
+
+struct __declspec(uuid("c43bcd51-dc3d-4040-ae79-475898fad683"))
+ISmpView : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall PrintInDosMode ( ) = 0;
+    virtual HRESULT __stdcall PrintReport ( ) = 0;
+};
+
+struct __declspec(uuid("b32e691f-bebb-4561-8d67-9c2aa374554c"))
+ISmpPluginTab : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall SetCurrentView (
+        long lIndex ) = 0;
+    virtual HRESULT __stdcall AddView (
+        BSTR sLabel,
+        VARIANT pView,
+        BSTR sTooltip,
+        long * plIndex ) = 0;
+    virtual HRESULT __stdcall CreateView (
+        BSTR sLabel,
+        BSTR sTooltip,
+        VARIANT * pView,
+        long * plIndex ) = 0;
+    virtual HRESULT __stdcall get_WindowHandle (
+        long iTabIndex,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall CreateFormView (
+        BSTR sLabel,
+        BSTR sTooltip,
+        VARIANT * pView,
+        long * plIndex ) = 0;
+    virtual HRESULT __stdcall CreateWinFormsView (
+        BSTR sLabel,
+        BSTR sTooltip,
+        VARIANT * pView,
+        long * plIndex ) = 0;
+    virtual HRESULT __stdcall GetWindowRect (
+        long lTabIndex,
+        long * pX,
+        long * pY,
+        long * pWidth,
+        long * pHeight ) = 0;
+    virtual HRESULT __stdcall AddSmpPage (
+        VARIANT pPage ) = 0;
+    virtual HRESULT __stdcall CreateHtmlView (
+        BSTR sLabel,
+        BSTR sTooltip,
+        IDispatch * * pBrowser,
+        long * plIndex ) = 0;
+};
+
+struct __declspec(uuid("f9d1f9ad-33b7-4fc6-8d23-a9dafe36467d"))
+ICustomerEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnCustomerDelete (
+        BSTR strCustomerID ) = 0;
+    virtual HRESULT __stdcall OnShowCustomerDetails (
+        BSTR strCustID,
+        VARIANT varGenericReport ) = 0;
+    virtual HRESULT __stdcall OnCustomerAdd (
+        BSTR strCustomerID ) = 0;
+    virtual HRESULT __stdcall OnCustomerEdit (
+        BSTR strCustomerID ) = 0;
+};
+
+struct __declspec(uuid("170b5b98-b54d-497b-838a-2711cdd5c3f0"))
+ISmpUser : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_CurrentLoginUser (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall InvokeLoginUserDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeChangePasswordDlg ( ) = 0;
+};
+
+struct __declspec(uuid("6e623d84-621d-40c5-9562-2af541d61c0d"))
+Customer;
+    // [ default ] interface ICustomer
+
+struct __declspec(uuid("5da698d5-5685-4c4f-b049-f04d57987241"))
+Item;
+    // [ default ] interface IItem
+
+struct __declspec(uuid("5a44547a-43b5-4a77-8029-d7fa61a9587c"))
+Reports;
+    // [ default ] interface IReports
+
+struct __declspec(uuid("c5300ca7-ec31-4857-aebf-391a2121e52d"))
+TansactionEvents;
+    // [ default ] interface ITansactionEvents
+
+struct __declspec(uuid("a73cd74e-21fc-4635-add0-f6560e7d20c8"))
+SalesCheckout;
+    // [ default ] interface ISalesCheckout
+
+struct __declspec(uuid("501bfeb5-8b68-431f-843e-e0925280ed92"))
+SalesCheckoutEvents;
+    // [ default ] interface ISalesCheckoutEvents
+
+struct __declspec(uuid("81a7e6a8-8b29-49a7-8853-8eba1bf2487b"))
+Transactions;
+    // [ default ] interface ITransactions
+
+struct __declspec(uuid("04b4e5cf-e92a-43b5-8f9f-e5355ae2a2cd"))
+Settings;
+    // [ default ] interface ISettings
+
+struct __declspec(uuid("7cc11c17-dc7f-49da-b0ad-c3b6e8bc004d"))
+Security;
+    // [ default ] interface ISecurity
+
+struct __declspec(uuid("89483bb2-9cd9-4c82-b4d6-ecd0880ea2c6"))
+Database;
+    // [ default ] interface IDatabase
+
+struct __declspec(uuid("9bfccb22-edc3-4f7b-ad5c-11c6e93f54b5"))
+Grid;
+    // [ default ] interface IGrid
+
+struct __declspec(uuid("39c44a9f-18b5-4e14-b459-f65086eb87e8"))
+SmpApp;
+    // [ default ] interface ISmpApp
+
+struct __declspec(uuid("a9c4cb72-27d7-4a8d-b4b2-841c99e2f4f7"))
+SmpAddin;
+    // [ default ] interface ISmpAddin
+
+struct __declspec(uuid("e9a6c8ab-c309-4bf3-a554-011bd000c135"))
+Accounts;
+    // [ default ] interface IAccounts
+
+struct __declspec(uuid("7930b1b6-6eb5-4f8c-954e-2aeafc4f3d9b"))
+AccountsEvents;
+    // [ default ] interface IAccountsEvents
+
+struct __declspec(uuid("56399816-3cc6-409b-8f99-2f75a8d6dbd7"))
+SmpDialogEvents;
+    // [ default ] interface ISmpDialogEvents
+
+struct __declspec(uuid("8ee1ac73-2e49-4dba-8092-b2297e954c1d"))
+SmpReport;
+    // [ default ] interface ISmpReport
+
+struct __declspec(uuid("9ea79bef-6b51-4ead-93cb-914c1827d344"))
+ISmpCommands;
+    // [ default ] interface IISmpCommands
+
+struct __declspec(uuid("7bc3b049-342f-450a-98e0-14d029178618"))
+ISmpGenericReport;
+    // [ default ] interface IISmpGenericReport
+
+struct __declspec(uuid("46111cee-b674-4e49-ab38-11f9162e9f6a"))
+SmpView;
+    // [ default ] interface ISmpView
+
+struct __declspec(uuid("fbf10d29-4b43-4def-a1f2-acc7d498d631"))
+SmpPluginTab;
+    // [ default ] interface ISmpPluginTab
+
+struct __declspec(uuid("43a56ed8-137a-429e-b6a1-219779f34966"))
+CustomerEvents;
+    // [ default ] interface ICustomerEvents
+
+struct __declspec(uuid("f36c5583-2650-4849-8ca3-f1dedc0ac54d"))
+_ISmpUserEvents : IDispatch
+{};
+
+struct __declspec(uuid("91f73f3f-4df0-4849-b7fb-0b1f8d41097f"))
+ISmpUserEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnUserLogin (
+        BSTR strUserLoginName ) = 0;
+    virtual HRESULT __stdcall OnUserLogout (
+        BSTR strUserLoginName ) = 0;
+    virtual HRESULT __stdcall AddLoginUserPages (
+        VARIANT pSheet ) = 0;
+};
+
+struct __declspec(uuid("ef4b25d3-4185-45c6-9e19-093c379ea1c3"))
+ISmpPluginTabEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnSetCurView (
+        long lCurViewIndex ) = 0;
+};
+
+struct __declspec(uuid("ada659fb-719e-4c25-9129-159367c4b632"))
+ISmpDialogExt : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall AddCustomerPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddSetupPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddDeleteOldDataPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddShopPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddManageUserPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddTransactionPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddStockItemPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall AddAboutBoxPages (
+        VARIANT pSheet ) = 0;
+};
+
+struct __declspec(uuid("5d0c5a85-4211-480f-a1a9-dd08381e6bcc"))
+ISmpReceiptSettings : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_BypassPrintDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintShopNameAtHeader (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintTimeAtFooter (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EnableDefaultReceiptPrinter (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ReceiptPrinterName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintFooterText (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_FooterText (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ReceiptSpacing (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AlwaysPrintSalesReceipt (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintReceiptsContinuously (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PhoneNumberAtFooter (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall SetEscPOSMode (
+        long bMode ) = 0;
+};
+
+struct __declspec(uuid("bc3d15cc-e9e0-440c-b41d-5f088232a3f8"))
+ISmpReportSettings : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_BypassPrintDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintShopNameAtHeader (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintShopLogo (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintTimeAtFooter (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrintPhNoAtFooter (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_AllwaysPrintMembershipForm (
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("878b7957-12e1-434f-93ce-32332aa0c427"))
+ISmpFrame : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall SetPaneStatusText (
+        long lPane,
+        BSTR strStatusText,
+        OLE_COLOR lColor ) = 0;
+    virtual HRESULT __stdcall get_MainToolbarHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_LeftToolbarHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_RightToolbarHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_PluginToolbarCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_PluginToolbarHandle (
+        long lIndex,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_StatusbarHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_MainFrameHandle (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_MenuHandle (
+        VARIANT * pVal ) = 0;
+};
+
+struct __declspec(uuid("2dbfe3a4-a17c-421f-821f-152fa87b18e1"))
+ISmpStock : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ItemCount (
+        BSTR strItemID,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_ItemName (
+        BSTR strItemID,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_StdSellingPricePerUnit (
+        BSTR strItemID,
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall InvokeAddNewStockDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeEditStockDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeModifyStockItemPriceDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeStockRateSettingsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCheckoutDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCancelSalesDlg (
+        long * pSalesID ) = 0;
+};
+
+struct __declspec(uuid("fe33ba4f-ae48-47e7-a9b4-511cfc638e68"))
+ISmpStockEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall AddStockItemPages (
+        VARIANT pSheet ) = 0;
+    virtual HRESULT __stdcall OnAddStockItem (
+        BSTR strItemID ) = 0;
+    virtual HRESULT __stdcall OnDeleteStockItem (
+        BSTR strItemID ) = 0;
+    virtual HRESULT __stdcall OnEditStockItem (
+        BSTR strItemID ) = 0;
+};
+
+struct __declspec(uuid("600fcca6-c3fa-411a-b731-4cc8431e5366"))
+ISmpSetup : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeCurrencySettingsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeStockMasterDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeMethodOfPaymentDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeServiceMasterDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCategoryMasterDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeMiscItemMasterDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeShopInfoDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeManageUsersDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeDeleteOldDataDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeDefaultSettingsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeDefaultSettingsExtDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeSetupWizard ( ) = 0;
+};
+
+struct __declspec(uuid("91978b3c-5469-4a5c-ab1d-ba1822ca35bc"))
+ISmpSetupEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnSaveDefaultSettings ( ) = 0;
+    virtual HRESULT __stdcall OnPluginInvokeSetupWizard ( ) = 0;
+};
+
+struct __declspec(uuid("0c88823f-623c-4537-8b87-c47f49ddc7ea"))
+ISmpFileMenuOperations : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeBackupDataDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeRestoreDataDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokePrintDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokePrintPreviewDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokePrintSetupDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokePrintOldReceiptDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeLoginDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeLogout ( ) = 0;
+    virtual HRESULT __stdcall InvokeChangePasswordDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeExportReportDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeExit ( ) = 0;
+};
+
+struct __declspec(uuid("613889fa-c397-4927-bf74-4d35c44386fb"))
+ISmpHelp : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_HelpFilePath (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall InvokeTipOfTheDayDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeRegisterDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeHelpTopics (
+        BSTR strTopicPath ) = 0;
+    virtual HRESULT __stdcall InvokeMenuShortcutKeyDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeAboutBoxDlg ( ) = 0;
+};
+
+struct __declspec(uuid("06526a12-3815-4472-a98c-a73f92c565f3"))
+ISmpReportMenu : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeDailyAccountDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeMonthlyAccountDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeAnualAccountDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeSpecifiedPeriodAccountDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerSalesDetailsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerTransactionDetailsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerPaymentDetailsdlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerRefundDetailsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerBalanceAmountDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerMostActiveDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCustomerInactiveDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeSalesListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeStokeListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeReorderListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCanceledSalesDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeDiscountSalesDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeRollbackDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeMonthlyStatisticsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeAnualStatisticsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeTransactionListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeMiscTransactionListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeServiceListDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeServiceDeliveredDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeCanceledTransactionsDlg ( ) = 0;
+    virtual HRESULT __stdcall InvokeDailySummaryDlg ( ) = 0;
+};
+
+struct __declspec(uuid("02020bb8-574c-4d93-94c3-68a672648acc"))
+IISmpReportMenuEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall OnMonthlyStatisticsReport (
+        BSTR strMonth,
+        BSTR strYear,
+        VARIANT varGenericReport ) = 0;
+    virtual HRESULT __stdcall OnAnualStatisticsReport (
+        BSTR strYear,
+        VARIANT varGenericReport ) = 0;
+};
+
+struct __declspec(uuid("2b160279-6f39-49b4-9a01-b7c4aba979f9"))
+ISmpPropertySheet : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ItemID (
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("a991dfa2-cfb9-48f7-aa12-1f18eb6b8e96"))
+ISmpGrid : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_IsCellMerged (
+        long iRow,
+        long iCol,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall AutoSize ( ) = 0;
+    virtual HRESULT __stdcall get_GridObj (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_SelectedCellCount (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall SetFocusCell (
+        long iRow,
+        long iCol ) = 0;
+    virtual HRESULT __stdcall get_RowResize (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_RowResize (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ColumnResize (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_ColumnResize (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall SetAutoSizeStyle (
+        int nStyle ) = 0;
+};
+
+struct __declspec(uuid("af25b533-f143-4b99-841e-5458eff80af9"))
+ISmpOEM : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_OEMFilePresent (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAppTitle (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAppVersion (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAboutBoxCaption (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMCopyRightString (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMResourceDLLName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAppCode (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMComponentCategory (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMHelpFileName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMWebSite (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAppKey (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMBkgColor (
+        OLE_COLOR * pVal ) = 0;
+    virtual HRESULT __stdcall put_OEMBkgColor (
+        OLE_COLOR pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMRegistryKey (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAboutBoxImageName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMTrialPeriodExpirationMessage (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMFreeVersionName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMPaidVersionName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMEvaluationVersionText (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomCurrencysettingDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomCurrencysettingDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomStockTypeMasterDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomStockTypeMasterDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomMethodOfPaymentDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomMethodOfPaymentDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeServiceMasterDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeServiceMasterDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomCategoryMasterDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomCategoryMasterDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomMiscItemMasterDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomMiscItemMasterDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomShopInfoDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomShopInfoDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomManageUsersDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomManageUsersDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomDeleteOldDataDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomDeleteOldDataDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomDefaultSettingsDlg (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomDefaultSettingsDlg (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMCustomSecurityInfoXML (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_OEMCustomSecurityInfoXML (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_OEMAddinCLSID (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomSetupWizard (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomSetupWizard (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomCustomerDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomCustomerDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomTransactionDlg (
+        long iDialogTransactionType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomTransactionDlg (
+        long iDialogTransactionType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomSetupDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomSetupDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomSalesDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomSalesDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomAccountsDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomAccountsDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomreportsDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomreportsDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomHelpDlg (
+        long iDialogType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomHelpDlg (
+        long iDialogType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomFileMenuDlg (
+        long iMenuType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomFileMenuDlg (
+        long iMenuType,
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_InvokeCustomViewMenuDlg (
+        long iMenuType,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InvokeCustomViewMenuDlg (
+        long iMenuType,
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("f6ec315e-09e8-4a3f-bf85-fd90b0354b05"))
+ISmpOEMEvents : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall InvokeCustomFileMenuDlg (
+        long iMenuType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomSetupMenuDlg (
+        long iDialogType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomViewMenu (
+        long iMenuType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomCustomerMenuDlg (
+        long iMenuType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomTransactionMenuDlg (
+        long iDialogType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomSalesMenuDlg (
+        long iDialogType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomAccountsMenuDlg (
+        long iMenuType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomReportMenuDlg (
+        long iDlgType ) = 0;
+    virtual HRESULT __stdcall InvokeCustomHelpMenuDlg (
+        long iHelpMenuType ) = 0;
+};
+
+struct __declspec(uuid("501f7527-d2f0-44ac-856b-ae73450a1e05"))
+ISmpSettingsEx : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall ReloadAllDefaultSettings ( ) = 0;
+    virtual HRESULT __stdcall ReloadAllLocalSettings ( ) = 0;
+    virtual HRESULT __stdcall ReloadAllApplicationSettings ( ) = 0;
+};
+
+struct __declspec(uuid("75798720-a777-49c4-94c9-139dda4d2ac7"))
+ISmpGridCtrl : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall SetCellTextAlignment (
+        int Row,
+        int Col,
+        long Alignment ) = 0;
+    virtual HRESULT __stdcall SetCellTextWrap (
+        int Row,
+        int Col,
+        long WordWrap ) = 0;
+    virtual HRESULT __stdcall SetWordWrapMode (
+        long bMode ) = 0;
+    virtual HRESULT __stdcall SetCellText (
+        int Row,
+        int Col,
+        BSTR CellText,
+        long TextDisplayOptions ) = 0;
+    virtual HRESULT __stdcall AutoSize ( ) = 0;
+    virtual HRESULT __stdcall RefreshCtrl ( ) = 0;
+    virtual HRESULT __stdcall SetBusinessLogo (
+        int Row,
+        int Col,
+        int Width,
+        int Height ) = 0;
+    virtual HRESULT __stdcall SetCellImageEx (
+        int Row,
+        int Col,
+        long ImageResID,
+        long ModuleHandle,
+        int Width,
+        int Height ) = 0;
+    virtual HRESULT __stdcall SetCellImage (
+        int Row,
+        int Col,
+        BSTR strImagePath,
+        int Width,
+        int Height ) = 0;
+    virtual HRESULT __stdcall SetGridDisplayReadOnly (
+        long bReadOnly ) = 0;
+    virtual HRESULT __stdcall SetDefaultRowHeight (
+        long Height ) = 0;
+    virtual HRESULT __stdcall SetDefaultColumnWidth (
+        long Width ) = 0;
+    virtual HRESULT __stdcall get_GridCtrlObj (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall DeleteAllImages ( ) = 0;
+    virtual HRESULT __stdcall get_GridBkgColor (
+        OLE_COLOR * pVal ) = 0;
+    virtual HRESULT __stdcall put_GridBkgColor (
+        OLE_COLOR pVal ) = 0;
+    virtual HRESULT __stdcall DeleteAllItems ( ) = 0;
+};
+
+struct __declspec(uuid("166aacc5-f628-4dd8-8297-ebf964356665"))
+SmpUser;
+    // [ default ] interface ISmpUser
+    // [ default, source ] dispinterface _ISmpUserEvents
+
+struct __declspec(uuid("05628373-c865-4d0f-b004-52254af470c2"))
+SmpUserEvents;
+    // [ default ] interface ISmpUserEvents
+
+struct __declspec(uuid("a8cc4fd8-be91-4514-8fbf-50fbc290b0e7"))
+SmpPluginTabEvents;
+    // [ default ] interface ISmpPluginTabEvents
+
+struct __declspec(uuid("860e8ea1-551d-42c1-a3b5-9944173325c2"))
+SmpDialogExt;
+    // [ default ] interface ISmpDialogExt
+
+struct __declspec(uuid("1f7b4191-1959-4ff6-8f24-9535b8e5d7c4"))
+SmpReceiptSettings;
+    // [ default ] interface ISmpReceiptSettings
+
+struct __declspec(uuid("505cfb73-6192-4000-be28-ad0ec9792efb"))
+SmpReportSettings;
+    // [ default ] interface ISmpReportSettings
+
+struct __declspec(uuid("1ede1f93-4b71-4316-aa3f-7a97119c1bd5"))
+SmpFrame;
+    // [ default ] interface ISmpFrame
+
+struct __declspec(uuid("69379556-047e-4000-9dcc-398e13ba175e"))
+SmpReportItemAttributes;
+    // [ default ] interface ISmpReportItemAttributes
+
+struct __declspec(uuid("6536ae54-1061-4cb4-b7c4-142f749495cb"))
+SmpStock;
+    // [ default ] interface ISmpStock
+
+struct __declspec(uuid("6e2d1972-59b5-4397-8f1d-9fdbc58851ff"))
+SmpStockEvents;
+    // [ default ] interface ISmpStockEvents
+
+struct __declspec(uuid("75389ec3-4c61-4b22-b9f8-28ff3a8506ad"))
+SmpSetup;
+    // [ default ] interface ISmpSetup
+
+struct __declspec(uuid("caf70832-398f-4bdf-a448-d5fed8c6c662"))
+SmpSetupEvents;
+    // [ default ] interface ISmpSetupEvents
+
+struct __declspec(uuid("958ae426-20e7-4553-99e8-55c8c53812b2"))
+SmpFileMenuOperations;
+    // [ default ] interface ISmpFileMenuOperations
+
+struct __declspec(uuid("735eb22d-ed2f-42b8-a135-7ac082e12d17"))
+SmpHelp;
+    // [ default ] interface ISmpHelp
+
+struct __declspec(uuid("b8cc1924-7a94-4818-9bbc-002750047e4d"))
+SmpReportMenu;
+    // [ default ] interface ISmpReportMenu
+
+struct __declspec(uuid("108673e6-72a2-4a5f-baab-a86f20407088"))
+ISmpReportMenuEvents;
+    // [ default ] interface IISmpReportMenuEvents
+
+struct __declspec(uuid("4001e471-0574-4dda-b843-bce937b4cab0"))
+SmpPropertySheet;
+    // [ default ] interface ISmpPropertySheet
+
+struct __declspec(uuid("4016484a-a883-4d5f-9df9-0ad565f3196b"))
+SmpGrid;
+    // [ default ] interface ISmpGrid
+
+struct __declspec(uuid("d269d976-701f-4535-bdfa-947082dc9018"))
+SmpOEM;
+    // [ default ] interface ISmpOEM
+
+struct __declspec(uuid("3fb5690e-57e6-478e-8188-04523ecca978"))
+SmpOEMEvents;
+    // [ default ] interface ISmpOEMEvents
+
+struct __declspec(uuid("cd279f7b-d5ab-49c5-99d8-661f3ef64107"))
+SmpSettingsEx;
+    // [ default ] interface ISmpSettingsEx
+
+struct __declspec(uuid("0152ce94-0a13-43cf-b869-cf18ee7d6052"))
+SmpGridCtrl;
+    // [ default ] interface ISmpGridCtrl
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_SalesMatePlusLib =
+    {0x03006c73,0xc98c,0x4105,{0xa5,0x03,0xfb,0xe5,0xa5,0x03,0x4c,0xf1}};
+extern "C" const GUID __declspec(selectany) IID_ICustomer =
+    {0xb29eb38d,0xfffc,0x4872,{0xad,0xa2,0xbf,0x73,0xd6,0x7c,0x37,0x68}};
+extern "C" const GUID __declspec(selectany) IID_IItem =
+    {0x9496e290,0x0f06,0x4273,{0x97,0xe2,0xd6,0xc2,0x17,0xef,0xac,0x5a}};
+extern "C" const GUID __declspec(selectany) IID_ISmpReportItemAttributes =
+    {0x7dc26416,0x07a8,0x4e7f,{0x9e,0xe5,0xa2,0x7a,0x9e,0xc8,0xd5,0x6a}};
+extern "C" const GUID __declspec(selectany) IID_IReports =
+    {0x616f863d,0xf514,0x4d2c,{0x8f,0x96,0x77,0xe5,0xcc,0x72,0x70,0xd3}};
+extern "C" const GUID __declspec(selectany) IID_ITansactionEvents =
+    {0x5a42d6bb,0x2599,0x4762,{0x8f,0xbd,0x2f,0xe5,0x5a,0x57,0xfb,0xf0}};
+extern "C" const GUID __declspec(selectany) IID_ISalesCheckout =
+    {0xeaae5ca7,0x3b1c,0x4014,{0x8c,0x37,0x6c,0x50,0x48,0xe8,0x55,0x09}};
+extern "C" const GUID __declspec(selectany) IID_ISalesCheckoutEvents =
+    {0x3c19a890,0x9a5e,0x4483,{0xad,0x51,0xe7,0x24,0x0e,0xd5,0x3e,0x45}};
+extern "C" const GUID __declspec(selectany) IID_ITransactions =
+    {0x2521a1d1,0x899c,0x4a47,{0x8b,0xd1,0x32,0xe9,0xff,0x9a,0x38,0xac}};
+extern "C" const GUID __declspec(selectany) IID_ISettings =
+    {0x4ed71471,0x494e,0x4c62,{0x90,0xe6,0x6d,0x43,0xa5,0x78,0xb6,0x53}};
+extern "C" const GUID __declspec(selectany) IID_ISecurity =
+    {0xc40ada46,0x3e36,0x4775,{0xac,0x05,0xd6,0xb0,0x60,0x6d,0xf0,0x69}};
+extern "C" const GUID __declspec(selectany) IID_IDatabase =
+    {0xbfd291ea,0xe432,0x46a2,{0xb3,0x41,0xc1,0xd9,0x7a,0x1f,0x26,0xd0}};
+extern "C" const GUID __declspec(selectany) IID_IGrid =
+    {0x2f3567a0,0x33a6,0x4170,{0xbe,0xc6,0xc3,0x20,0xa6,0xa7,0xbe,0xc0}};
+extern "C" const GUID __declspec(selectany) IID_ISmpApp =
+    {0x9f72e333,0x9060,0x49f3,{0xaf,0x39,0x2d,0xcc,0xad,0xe5,0xcb,0x14}};
+extern "C" const GUID __declspec(selectany) IID_ISmpAddin =
+    {0x4763062e,0xd302,0x4128,{0xbb,0x0b,0xd2,0x41,0xb7,0x2d,0xf8,0x88}};
+extern "C" const GUID __declspec(selectany) IID_IAccounts =
+    {0xf41c4b91,0xe7d3,0x4db7,{0xb1,0xa8,0x1f,0xb7,0x65,0x4a,0xaa,0xb4}};
+extern "C" const GUID __declspec(selectany) IID_IAccountsEvents =
+    {0xdcb4251d,0x3b3c,0x4a5b,{0x94,0x17,0xe1,0xb8,0x28,0x98,0xa9,0xe2}};
+extern "C" const GUID __declspec(selectany) IID_ISmpDialogEvents =
+    {0xc360e5f2,0xbde8,0x4c8e,{0xb4,0x30,0xf5,0x2c,0x20,0x53,0xf3,0x1e}};
+extern "C" const GUID __declspec(selectany) IID_ISmpReport =
+    {0x423e7504,0xd489,0x444f,{0xbf,0x09,0x0f,0x23,0x6e,0xa8,0x2a,0xe9}};
+extern "C" const GUID __declspec(selectany) IID_IISmpCommands =
+    {0x3efc8770,0x6fb0,0x40de,{0xad,0x97,0xc6,0xc8,0x65,0x2d,0x7d,0xd7}};
+extern "C" const GUID __declspec(selectany) IID_IISmpGenericReport =
+    {0xfbf4770a,0x239a,0x48a4,{0x9f,0x1a,0xb2,0x59,0x57,0xee,0x0e,0xed}};
+extern "C" const GUID __declspec(selectany) IID_ISmpView =
+    {0xc43bcd51,0xdc3d,0x4040,{0xae,0x79,0x47,0x58,0x98,0xfa,0xd6,0x83}};
+extern "C" const GUID __declspec(selectany) IID_ISmpPluginTab =
+    {0xb32e691f,0xbebb,0x4561,{0x8d,0x67,0x9c,0x2a,0xa3,0x74,0x55,0x4c}};
+extern "C" const GUID __declspec(selectany) IID_ICustomerEvents =
+    {0xf9d1f9ad,0x33b7,0x4fc6,{0x8d,0x23,0xa9,0xda,0xfe,0x36,0x46,0x7d}};
+extern "C" const GUID __declspec(selectany) IID_ISmpUser =
+    {0x170b5b98,0xb54d,0x497b,{0x83,0x8a,0x27,0x11,0xcd,0xd5,0xc3,0xf0}};
+extern "C" const GUID __declspec(selectany) CLSID_Customer =
+    {0x6e623d84,0x621d,0x40c5,{0x95,0x62,0x2a,0xf5,0x41,0xd6,0x1c,0x0d}};
+extern "C" const GUID __declspec(selectany) CLSID_Item =
+    {0x5da698d5,0x5685,0x4c4f,{0xb0,0x49,0xf0,0x4d,0x57,0x98,0x72,0x41}};
+extern "C" const GUID __declspec(selectany) CLSID_Reports =
+    {0x5a44547a,0x43b5,0x4a77,{0x80,0x29,0xd7,0xfa,0x61,0xa9,0x58,0x7c}};
+extern "C" const GUID __declspec(selectany) CLSID_TansactionEvents =
+    {0xc5300ca7,0xec31,0x4857,{0xae,0xbf,0x39,0x1a,0x21,0x21,0xe5,0x2d}};
+extern "C" const GUID __declspec(selectany) CLSID_SalesCheckout =
+    {0xa73cd74e,0x21fc,0x4635,{0xad,0xd0,0xf6,0x56,0x0e,0x7d,0x20,0xc8}};
+extern "C" const GUID __declspec(selectany) CLSID_SalesCheckoutEvents =
+    {0x501bfeb5,0x8b68,0x431f,{0x84,0x3e,0xe0,0x92,0x52,0x80,0xed,0x92}};
+extern "C" const GUID __declspec(selectany) CLSID_Transactions =
+    {0x81a7e6a8,0x8b29,0x49a7,{0x88,0x53,0x8e,0xba,0x1b,0xf2,0x48,0x7b}};
+extern "C" const GUID __declspec(selectany) CLSID_Settings =
+    {0x04b4e5cf,0xe92a,0x43b5,{0x8f,0x9f,0xe5,0x35,0x5a,0xe2,0xa2,0xcd}};
+extern "C" const GUID __declspec(selectany) CLSID_Security =
+    {0x7cc11c17,0xdc7f,0x49da,{0xb0,0xad,0xc3,0xb6,0xe8,0xbc,0x00,0x4d}};
+extern "C" const GUID __declspec(selectany) CLSID_Database =
+    {0x89483bb2,0x9cd9,0x4c82,{0xb4,0xd6,0xec,0xd0,0x88,0x0e,0xa2,0xc6}};
+extern "C" const GUID __declspec(selectany) CLSID_Grid =
+    {0x9bfccb22,0xedc3,0x4f7b,{0xad,0x5c,0x11,0xc6,0xe9,0x3f,0x54,0xb5}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpApp =
+    {0x39c44a9f,0x18b5,0x4e14,{0xb4,0x59,0xf6,0x50,0x86,0xeb,0x87,0xe8}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpAddin =
+    {0xa9c4cb72,0x27d7,0x4a8d,{0xb4,0xb2,0x84,0x1c,0x99,0xe2,0xf4,0xf7}};
+extern "C" const GUID __declspec(selectany) CLSID_Accounts =
+    {0xe9a6c8ab,0xc309,0x4bf3,{0xa5,0x54,0x01,0x1b,0xd0,0x00,0xc1,0x35}};
+extern "C" const GUID __declspec(selectany) CLSID_AccountsEvents =
+    {0x7930b1b6,0x6eb5,0x4f8c,{0x95,0x4e,0x2a,0xea,0xfc,0x4f,0x3d,0x9b}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpDialogEvents =
+    {0x56399816,0x3cc6,0x409b,{0x8f,0x99,0x2f,0x75,0xa8,0xd6,0xdb,0xd7}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpReport =
+    {0x8ee1ac73,0x2e49,0x4dba,{0x80,0x92,0xb2,0x29,0x7e,0x95,0x4c,0x1d}};
+extern "C" const GUID __declspec(selectany) CLSID_ISmpCommands =
+    {0x9ea79bef,0x6b51,0x4ead,{0x93,0xcb,0x91,0x4c,0x18,0x27,0xd3,0x44}};
+extern "C" const GUID __declspec(selectany) CLSID_ISmpGenericReport =
+    {0x7bc3b049,0x342f,0x450a,{0x98,0xe0,0x14,0xd0,0x29,0x17,0x86,0x18}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpView =
+    {0x46111cee,0xb674,0x4e49,{0xab,0x38,0x11,0xf9,0x16,0x2e,0x9f,0x6a}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpPluginTab =
+    {0xfbf10d29,0x4b43,0x4def,{0xa1,0xf2,0xac,0xc7,0xd4,0x98,0xd6,0x31}};
+extern "C" const GUID __declspec(selectany) CLSID_CustomerEvents =
+    {0x43a56ed8,0x137a,0x429e,{0xb6,0xa1,0x21,0x97,0x79,0xf3,0x49,0x66}};
+extern "C" const GUID __declspec(selectany) DIID__ISmpUserEvents =
+    {0xf36c5583,0x2650,0x4849,{0x8c,0xa3,0xf1,0xde,0xdc,0x0a,0xc5,0x4d}};
+extern "C" const GUID __declspec(selectany) IID_ISmpUserEvents =
+    {0x91f73f3f,0x4df0,0x4849,{0xb7,0xfb,0x0b,0x1f,0x8d,0x41,0x09,0x7f}};
+extern "C" const GUID __declspec(selectany) IID_ISmpPluginTabEvents =
+    {0xef4b25d3,0x4185,0x45c6,{0x9e,0x19,0x09,0x3c,0x37,0x9e,0xa1,0xc3}};
+extern "C" const GUID __declspec(selectany) IID_ISmpDialogExt =
+    {0xada659fb,0x719e,0x4c25,{0x91,0x29,0x15,0x93,0x67,0xc4,0xb6,0x32}};
+extern "C" const GUID __declspec(selectany) IID_ISmpReceiptSettings =
+    {0x5d0c5a85,0x4211,0x480f,{0xa1,0xa9,0xdd,0x08,0x38,0x1e,0x6b,0xcc}};
+extern "C" const GUID __declspec(selectany) IID_ISmpReportSettings =
+    {0xbc3d15cc,0xe9e0,0x440c,{0xb4,0x1d,0x5f,0x08,0x82,0x32,0xa3,0xf8}};
+extern "C" const GUID __declspec(selectany) IID_ISmpFrame =
+    {0x878b7957,0x12e1,0x434f,{0x93,0xce,0x32,0x33,0x2a,0xa0,0xc4,0x27}};
+extern "C" const GUID __declspec(selectany) IID_ISmpStock =
+    {0x2dbfe3a4,0xa17c,0x421f,{0x82,0x1f,0x15,0x2f,0xa8,0x7b,0x18,0xe1}};
+extern "C" const GUID __declspec(selectany) IID_ISmpStockEvents =
+    {0xfe33ba4f,0xae48,0x47e7,{0xa9,0xb4,0x51,0x1c,0xfc,0x63,0x8e,0x68}};
+extern "C" const GUID __declspec(selectany) IID_ISmpSetup =
+    {0x600fcca6,0xc3fa,0x411a,{0xb7,0x31,0x4c,0xc8,0x43,0x1e,0x53,0x66}};
+extern "C" const GUID __declspec(selectany) IID_ISmpSetupEvents =
+    {0x91978b3c,0x5469,0x4a5c,{0xab,0x1d,0xba,0x18,0x22,0xca,0x35,0xbc}};
+extern "C" const GUID __declspec(selectany) IID_ISmpFileMenuOperations =
+    {0x0c88823f,0x623c,0x4537,{0x8b,0x87,0xc4,0x7f,0x49,0xdd,0xc7,0xea}};
+extern "C" const GUID __declspec(selectany) IID_ISmpHelp =
+    {0x613889fa,0xc397,0x4927,{0xbf,0x74,0x4d,0x35,0xc4,0x43,0x86,0xfb}};
+extern "C" const GUID __declspec(selectany) IID_ISmpReportMenu =
+    {0x06526a12,0x3815,0x4472,{0xa9,0x8c,0xa7,0x3f,0x92,0xc5,0x65,0xf3}};
+extern "C" const GUID __declspec(selectany) IID_IISmpReportMenuEvents =
+    {0x02020bb8,0x574c,0x4d93,{0x94,0xc3,0x68,0xa6,0x72,0x64,0x8a,0xcc}};
+extern "C" const GUID __declspec(selectany) IID_ISmpPropertySheet =
+    {0x2b160279,0x6f39,0x49b4,{0x9a,0x01,0xb7,0xc4,0xab,0xa9,0x79,0xf9}};
+extern "C" const GUID __declspec(selectany) IID_ISmpGrid =
+    {0xa991dfa2,0xcfb9,0x48f7,{0xaa,0x12,0x1f,0x18,0xeb,0x6b,0x8e,0x96}};
+extern "C" const GUID __declspec(selectany) IID_ISmpOEM =
+    {0xaf25b533,0xf143,0x4b99,{0x84,0x1e,0x54,0x58,0xef,0xf8,0x0a,0xf9}};
+extern "C" const GUID __declspec(selectany) IID_ISmpOEMEvents =
+    {0xf6ec315e,0x09e8,0x4a3f,{0xbf,0x85,0xfd,0x90,0xb0,0x35,0x4b,0x05}};
+extern "C" const GUID __declspec(selectany) IID_ISmpSettingsEx =
+    {0x501f7527,0xd2f0,0x44ac,{0x85,0x6b,0xae,0x73,0x45,0x0a,0x1e,0x05}};
+extern "C" const GUID __declspec(selectany) IID_ISmpGridCtrl =
+    {0x75798720,0xa777,0x49c4,{0x94,0xc9,0x13,0x9d,0xda,0x4d,0x2a,0xc7}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpUser =
+    {0x166aacc5,0xf628,0x4dd8,{0x82,0x97,0xeb,0xf9,0x64,0x35,0x66,0x65}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpUserEvents =
+    {0x05628373,0xc865,0x4d0f,{0xb0,0x04,0x52,0x25,0x4a,0xf4,0x70,0xc2}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpPluginTabEvents =
+    {0xa8cc4fd8,0xbe91,0x4514,{0x8f,0xbf,0x50,0xfb,0xc2,0x90,0xb0,0xe7}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpDialogExt =
+    {0x860e8ea1,0x551d,0x42c1,{0xa3,0xb5,0x99,0x44,0x17,0x33,0x25,0xc2}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpReceiptSettings =
+    {0x1f7b4191,0x1959,0x4ff6,{0x8f,0x24,0x95,0x35,0xb8,0xe5,0xd7,0xc4}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpReportSettings =
+    {0x505cfb73,0x6192,0x4000,{0xbe,0x28,0xad,0x0e,0xc9,0x79,0x2e,0xfb}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpFrame =
+    {0x1ede1f93,0x4b71,0x4316,{0xaa,0x3f,0x7a,0x97,0x11,0x9c,0x1b,0xd5}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpReportItemAttributes =
+    {0x69379556,0x047e,0x4000,{0x9d,0xcc,0x39,0x8e,0x13,0xba,0x17,0x5e}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpStock =
+    {0x6536ae54,0x1061,0x4cb4,{0xb7,0xc4,0x14,0x2f,0x74,0x94,0x95,0xcb}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpStockEvents =
+    {0x6e2d1972,0x59b5,0x4397,{0x8f,0x1d,0x9f,0xdb,0xc5,0x88,0x51,0xff}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpSetup =
+    {0x75389ec3,0x4c61,0x4b22,{0xb9,0xf8,0x28,0xff,0x3a,0x85,0x06,0xad}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpSetupEvents =
+    {0xcaf70832,0x398f,0x4bdf,{0xa4,0x48,0xd5,0xfe,0xd8,0xc6,0xc6,0x62}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpFileMenuOperations =
+    {0x958ae426,0x20e7,0x4553,{0x99,0xe8,0x55,0xc8,0xc5,0x38,0x12,0xb2}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpHelp =
+    {0x735eb22d,0xed2f,0x42b8,{0xa1,0x35,0x7a,0xc0,0x82,0xe1,0x2d,0x17}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpReportMenu =
+    {0xb8cc1924,0x7a94,0x4818,{0x9b,0xbc,0x00,0x27,0x50,0x04,0x7e,0x4d}};
+extern "C" const GUID __declspec(selectany) CLSID_ISmpReportMenuEvents =
+    {0x108673e6,0x72a2,0x4a5f,{0xba,0xab,0xa8,0x6f,0x20,0x40,0x70,0x88}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpPropertySheet =
+    {0x4001e471,0x0574,0x4dda,{0xb8,0x43,0xbc,0xe9,0x37,0xb4,0xca,0xb0}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpGrid =
+    {0x4016484a,0xa883,0x4d5f,{0x9d,0xf9,0x0a,0xd5,0x65,0xf3,0x19,0x6b}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpOEM =
+    {0xd269d976,0x701f,0x4535,{0xbd,0xfa,0x94,0x70,0x82,0xdc,0x90,0x18}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpOEMEvents =
+    {0x3fb5690e,0x57e6,0x478e,{0x81,0x88,0x04,0x52,0x3e,0xcc,0xa9,0x78}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpSettingsEx =
+    {0xcd279f7b,0xd5ab,0x49c5,{0x99,0xd8,0x66,0x1f,0x3e,0xf6,0x41,0x07}};
+extern "C" const GUID __declspec(selectany) CLSID_SmpGridCtrl =
+    {0x0152ce94,0x0a13,0x43cf,{0xb8,0x69,0xcf,0x18,0xee,0x7d,0x60,0x52}};
+
+#pragma pack(pop)

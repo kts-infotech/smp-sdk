@@ -1,0 +1,69 @@
+// SDKTest.idl : IDL source for SDKTest.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SDKTest.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(7B99B3C8-DF79-42DD-984D-85453CDFA989),
+		dual,
+		helpstring("ISMPCPPAddin Interface"),
+		pointer_default(unique)
+	]
+	interface ISMPCPPAddin : IDispatch
+	{
+		[id(1), helpstring("method GenericReportUsingMethod")] HRESULT GenericReportUsingMethod();
+		[id(2), helpstring("method GenericReportUsingAttribute")] HRESULT GenericReportUsingAttribute();
+		[id(3), helpstring("method UsingIAccountsInterface")] HRESULT UsingIAccountsInterface();
+		[id(4), helpstring("method UsingICustomerInterface")] HRESULT UsingICustomerInterface();
+		[id(5), helpstring("method UsingIDatabaseMethods")] HRESULT UsingIDatabaseMethods();
+		[id(6), helpstring("method UsingIGridInterface")] HRESULT UsingIGridInterface();
+		[id(7), helpstring("method UsingIISmpCommandsInterface")] HRESULT UsingIISmpCommandsInterface();
+		[id(8), helpstring("method UsingIItemInterface")] HRESULT UsingIItemInterface();
+		[id(9), helpstring("method UsingIReportsInterface")] HRESULT UsingIReportsInterface();
+		[id(10), helpstring("method UsingISalesCheckoutInterface")] HRESULT UsingISalesCheckoutInterface();
+		[id(11), helpstring("method UsingISecurityInterface")] HRESULT UsingISecurityInterface();
+		[id(12), helpstring("method UsingISettingsInterface")] HRESULT UsingISettingsInterface();
+		[id(13), helpstring("method UsingISmpAppInterface")] HRESULT UsingISmpAppInterface();
+		[id(14), helpstring("method UsingISmpFileMenuOperationsInterface")] HRESULT UsingISmpFileMenuOperationsInterface();
+		[id(15), helpstring("method UsingISmpFrameInterface")] HRESULT UsingISmpFrameInterface();
+		[id(16), helpstring("method UsingISmpHelpInterface")] HRESULT UsingISmpHelpInterface();
+		[id(17), helpstring("method UsingISmpPluginTabInterface")] HRESULT UsingISmpPluginTabInterface();
+		[id(18), helpstring("method UsingISmpReceiptSettingsInterface")] HRESULT UsingISmpReceiptSettingsInterface();
+		[id(19), helpstring("method UsingISmpReportInterface")] HRESULT UsingISmpReportInterface();
+		[id(20), helpstring("method UsingISmpReportMenuInterface")] HRESULT UsingISmpReportMenuInterface();
+		[id(21), helpstring("method UsingISmpReportSettingsInterface")] HRESULT UsingISmpReportSettingsInterface();
+		[id(22), helpstring("method UsingISmpSetupInterface")] HRESULT UsingISmpSetupInterface();
+		[id(23), helpstring("method UsingISmpStockInterface")] HRESULT UsingISmpStockInterface();
+		[id(24), helpstring("method UsingISmpUserInterface")] HRESULT UsingISmpUserInterface();
+		[id(25), helpstring("method UsingISmpViewInterface")] HRESULT UsingISmpViewInterface();
+		[id(26), helpstring("method UsingITransactionsInterface")] HRESULT UsingITransactionsInterface();
+		[id(27), helpstring("method UsingISmpOEMInterface")] HRESULT UsingISmpOEMInterface();
+		[id(28), helpstring("method UsingISmpOEMEventsInterface")] HRESULT UsingISmpOEMEventsInterface();
+		[id(29), helpstring("method UsingSmpGridControlMethod")] HRESULT UsingSmpGridControlMethod();
+		[id(30), helpstring("method UsingSmpGridInterface")] HRESULT UsingSmpGridInterface();
+		[id(31), helpstring("method UsingISmpSettingsExInterface")] HRESULT UsingISmpSettingsExInterface();
+	};
+
+[
+	uuid(34D28F26-1B02-4572-B05C-56D02DCD6A1E),
+	version(1.0),
+	helpstring("SDKTest 1.0 Type Library")
+]
+library SDKTESTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(6E58B088-98BA-4AA9-B124-006AA96D9DF0),
+		helpstring("SMPCPPAddin Class")
+	]
+	coclass SMPCPPAddin
+	{
+		[default] interface ISMPCPPAddin;
+	};
+};

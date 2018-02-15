@@ -1,0 +1,415 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D39A6C8-279C-434A-A99A-8692CB6A7944}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CSharpSDKTest</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CSharpSDKTest</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="SalesMatePlusLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SDK\Bin\SalesMatePlusLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddinControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddinControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddinXML.xml" />
+    <EmbeddedResource Include="Bitmap1.bmp" />
+    <EmbeddedResource Include="IGridDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IGridDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IISmpCommandsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IISmpCommandsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IISmpGenericReportDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IISmpGenericReportDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IReportsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IReportsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISecurityDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISecurityDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpAppDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpAppDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpFrameDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpFrameDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IAccountsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IAccountsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ICustomerDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ICustomerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDatabaseDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IDatabaseDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISettingsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISettingsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpReportItemAttributesDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpReportItemAttributesDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpReportMenuDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpReportMenuDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISalesCheckOutDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISalesCheckOutDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpHelpDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpHelpDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpReceiptsettingsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpReceiptsettingsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpReportSettingDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpReportSettingDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpFileMenuOperationsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpFileMenuOperationsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpReportDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpReportDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpSetUpDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpSetUpDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpStockDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpStockDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpUserDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpUserDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISmpViewDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpViewDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITransactionDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ITransactionDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmpGridDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmpGridDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmpGridCtrlDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmpGridCtrlDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmpOEMEventsDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmpOEMEventsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="AddinControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddinControl.Designer.cs">
+      <DependentUpon>AddinControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGridDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IGridDlg.Designer.cs">
+      <DependentUpon>IGridDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IISmpCommandsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IISmpCommandsDlg.Designer.cs">
+      <DependentUpon>IISmpCommandsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IISmpGenericReportDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IISmpGenericReportDlg.Designer.cs">
+      <DependentUpon>IISmpGenericReportDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IReportsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IReportsDlg.Designer.cs">
+      <DependentUpon>IReportsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISecurityDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISecurityDlg.Designer.cs">
+      <DependentUpon>ISecurityDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpAppDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpAppDlg.Designer.cs">
+      <DependentUpon>ISmpAppDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpFrameDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpFrameDlg.Designer.cs">
+      <DependentUpon>ISmpFrameDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IAccountsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IAccountsDlg.Designer.cs">
+      <DependentUpon>IAccountsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICustomerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ICustomerDlg.Designer.cs">
+      <DependentUpon>ICustomerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDatabaseDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDatabaseDlg.Designer.cs">
+      <DependentUpon>IDatabaseDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISettingsDlg.Designer.cs">
+      <DependentUpon>ISettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpReportItemAttributesDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpReportItemAttributesDlg.Designer.cs">
+      <DependentUpon>ISmpReportItemAttributesDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpReportMenuDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpReportMenuDlg.Designer.cs">
+      <DependentUpon>ISmpReportMenuDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISalesCheckOutDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISalesCheckOutDlg.Designer.cs">
+      <DependentUpon>ISalesCheckOutDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DotnetAddin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISmpHelpDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpHelpDlg.Designer.cs">
+      <DependentUpon>ISmpHelpDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpReportSettingDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpReportSettingDlg.Designer.cs">
+      <DependentUpon>ISmpReportSettingDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpReceiptsettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpReceiptsettingsDlg.Designer.cs">
+      <DependentUpon>ISmpReceiptsettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpFileMenuOperationsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpFileMenuOperationsDlg.Designer.cs">
+      <DependentUpon>ISmpFileMenuOperationsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpReportDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpReportDlg.Designer.cs">
+      <DependentUpon>ISmpReportDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpSetUpDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpSetUpDlg.Designer.cs">
+      <DependentUpon>ISmpSetUpDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpStockDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpStockDlg.Designer.cs">
+      <DependentUpon>ISmpStockDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpUserDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpUserDlg.Designer.cs">
+      <DependentUpon>ISmpUserDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpViewDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpViewDlg.Designer.cs">
+      <DependentUpon>ISmpViewDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITransactionDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITransactionDlg.Designer.cs">
+      <DependentUpon>ITransactionDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmpGridDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmpGridDlg.Designer.cs">
+      <DependentUpon>SmpGridDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SmpGridCtrlDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmpGridCtrlDlg.Designer.cs">
+      <DependentUpon>SmpGridCtrlDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmpOEMEventsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmpOEMEventsDlg.Designer.cs">
+      <DependentUpon>SmpOEMEventsDlg.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

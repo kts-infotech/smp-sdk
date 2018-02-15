@@ -1,0 +1,26 @@
+HKCR
+{
+	SDKTest.SMPCPPAddin.1 = s 'SMPCPPAddin Class'
+	{
+		CLSID = s '{6E58B088-98BA-4AA9-B124-006AA96D9DF0}'
+	}
+	SDKTest.SMPCPPAddin = s 'SMPCPPAddin Class'
+	{
+		CLSID = s '{6E58B088-98BA-4AA9-B124-006AA96D9DF0}'
+		CurVer = s 'SDKTest.SMPCPPAddin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6E58B088-98BA-4AA9-B124-006AA96D9DF0} = s 'SMPCPPAddin Class'
+		{
+			ProgID = s 'SDKTest.SMPCPPAddin.1'
+			VersionIndependentProgID = s 'SDKTest.SMPCPPAddin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{34D28F26-1B02-4572-B05C-56D02DCD6A1E}'
+		}
+	}
+}
