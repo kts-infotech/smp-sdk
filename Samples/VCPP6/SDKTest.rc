@@ -1737,35 +1737,6 @@ END
 
 IDB_BITMAP_LOGO         BITMAP  DISCARDABLE     "Item557.bmp"
 IDB_BITMAP1_ONE_MORE    BITMAP  DISCARDABLE     "bitmap1.bmp"
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PROJNAME            "SDKTest"
-END
-
-#endif    // English (U.S.) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// English (U.S.) (unknown sub-lang: 0x10) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENN)
-#ifdef _WIN32
-LANGUAGE LANG_ENGLISH, 0x10
-#pragma code_page(1252)
-#endif //_WIN32
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Bitmap
-//
-
 IDR_CPP_ADINTOOLBAR     BITMAP  DISCARDABLE     "toolbar1.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1779,7 +1750,18 @@ BEGIN
     BUTTON      ID_BUTTON32770
 END
 
-#endif    // English (U.S.) (unknown sub-lang: 0x10) resources
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROJNAME            "SDKTest"
+END
+
+#endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
