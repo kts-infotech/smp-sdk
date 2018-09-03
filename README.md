@@ -8,3 +8,5 @@ KTS SalesMate + | Software Development kit | Documentation and Sample Code Repos
 3. Help folder contains detailed explanation to customization of SalesMate + using Addins, SalesMate + COM Automation Interfaces and its methods , how to Debug Addins etc.
 
 4. Bin Folder Contais SalesMate + Debug Mode application in ANSI and UNICODE mode. This enable you to debug the addin in the Debug Mode. Please note that you need to have the Debug mode application in place for you to debug and test the C++ addin in Debug Mode especially the Tab container.
+
+Last Official Update => 3-Sept-2018
