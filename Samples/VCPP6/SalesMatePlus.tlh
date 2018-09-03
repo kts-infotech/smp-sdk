@@ -1,9 +1,9 @@
-// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (bf4c6aa8).
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (6817821f).
 //
 // SalesMatePlus.tlh
 //
 // C++ source equivalent of Win32 type library .\SMPTLBFile\SalesMatePlus.tlb
-// compiler-generated file created 01/18/18 at 12:15:41 - DO NOT EDIT!
+// compiler-generated file created 02/26/18 at 16:25:29 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)

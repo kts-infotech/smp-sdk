@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SecurityTestSecurity>
+  <Value>1</Value>
+  <SecurityVer>2</SecurityVer>
+  <Module>
+    <Name>VB.Net SecurityTest Module</Name>
+    <Value>1</Value>
+    <Screen>
+      <Name>Sample SecurityTest Setup</Name>
+      <Value>1</Value>
+      <SubScreen>
+        <Name>Show Database</Name>
+        <Value>1</Value>
+      </SubScreen>
+      <SubScreen>
+        <Name>Show Sales Checkout</Name>
+        <Value>1</Value>
+      </SubScreen>
+    </Screen>
+  </Module>
+</SecurityTestSecurity>

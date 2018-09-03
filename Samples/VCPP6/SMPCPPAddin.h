@@ -9,6 +9,7 @@
 #include "SMPUserEventDlg.h"
 #include "AccntsReportTestDlg.h"
 #include  "SmpGridControlDlg.h"
+#include <afxtempl.h>
 
 #import ".\SMPTLBFile\SalesMatePlus.tlb" raw_interfaces_only, raw_native_types, no_namespace, named_guids 
 
@@ -43,6 +44,38 @@ static const GUID CATID_SMP_ADDINS =
 #define ID_VIEW_CLEAR_ALL               32868
 /////////////////////////////////////////////////////////////////////////////
 // CSMPCPPAddin
+
+class CMenuInfo
+{
+public:
+
+	
+
+	CString m_strFunctionName;
+	CUIntArray m_CommandIDArray;
+
+	CMenuInfo()
+	{
+	}
+
+	CMenuInfo(CMenuInfo &MenuInfo)
+	{
+		m_strFunctionName=MenuInfo.m_strFunctionName;
+
+		m_CommandIDArray.Copy(MenuInfo.m_CommandIDArray);
+	}
+
+	operator =(CMenuInfo &MenuInfo)
+	{
+		m_strFunctionName=MenuInfo.m_strFunctionName;
+
+		m_CommandIDArray.Copy(MenuInfo.m_CommandIDArray);
+
+	}
+
+};
+
+
 class ATL_NO_VTABLE CSMPCPPAddin : 
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CSMPCPPAddin, &CLSID_SMPCPPAddin>,
@@ -66,9 +99,13 @@ class ATL_NO_VTABLE CSMPCPPAddin :
 		CAccntsReportTestDlg *m_pAccntsReportTestDlg;
 		CButton* m_SDKButton;
 		CButton* m_SDKCheckBox;
+		CArray<CMenuInfo,CMenuInfo> m_MenuInfoArray;
+		
+		LONG m_lSessionID;
 public:
 	CSMPCPPAddin()
 	{
+		m_lSessionID=-1;
 	}
 
 DECLARE_REGISTRY_RESOURCEID(IDR_SMPCPPADDIN)
@@ -100,6 +137,8 @@ END_CATEGORY_MAP()
 
 // ISMPCPPAddin
 public:
+	void AddMenuInfo();
+	void LoadFunctionName(CStringArray &strFunctionNamesArray);
 	STDMETHOD(UsingISmpSettingsExInterface)();
 	STDMETHOD(UsingSmpGridInterface)();
 	STDMETHOD(UsingSmpGridControlMethod)();
@@ -136,6 +175,7 @@ public:
 // ISmpAddin
 	STDMETHOD(Initialize)(LONG lSessionID, ISmpApp * pApp, VARIANT bFirstTime)
 	{
+		m_lSessionID=lSessionID;
 		AFX_MANAGE_STATE(AfxGetStaticModuleState())
 
 		CString strXML,strSecurityXML;
@@ -156,6 +196,15 @@ public:
 			pApp->SetAddInInfo(lSessionID,(long)lAppHandle,strXML.AllocSysString(),IDR_CPP_ADINTOOLBAR,IDR_CPP_ADINTOOLBAR);
 			
 		}
+
+		if(LoadLongResource(strSecurityXML,IDR_SDK_TEST_ADDIN_SECURITY_INFO))
+		{
+			strSecurityXML.Replace(_T("\n"), _T("")); //Replace all new line characters
+			strSecurityXML.Replace(_T("\t"), _T("")); //Replace all tab characters
+			pApp->SetAddinSecurityInfo(lSessionID,strSecurityXML.AllocSysString());
+		
+		}
+
 		m_StockItemSDKTestPage = new CStockItemSDKTestPage();
 		m_SMPUserEventDlg	   = new CSMPUserEventDlg();
 		m_pAccntsReportTestDlg=new CAccntsReportTestDlg();
@@ -175,7 +224,58 @@ public:
 	}
 	STDMETHOD(UpdateAddinCmdUI)(LONG lCommandID, LONG * pbEnable)
 	{
-		return E_NOTIMPL;
+		try
+		{
+           	*pbEnable=(long)1;
+
+			CString strFunctionName;
+			
+			for(long lIndex=0; lIndex<m_MenuInfoArray.GetSize(); lIndex++)
+			{
+				for(long lCommandIndex=0;lCommandIndex<m_MenuInfoArray[lIndex].m_CommandIDArray.GetSize();lCommandIndex++)
+				{
+					if((UINT)lCommandID == m_MenuInfoArray[lIndex].m_CommandIDArray[lCommandIndex])
+					{
+						strFunctionName=m_MenuInfoArray[lIndex].m_strFunctionName;
+
+						break;
+					}
+
+				}
+			}
+
+			CComPtr<ISecurity> mSMPSecurity; 
+
+			long lValue=-1;
+
+			HRESULT hr=mSMPSecurity.CoCreateInstance(CLSID_Security);
+			if(SUCCEEDED(hr))
+			{
+				if(_T("UsingISmpOEMEventsInterface") ==strFunctionName)
+				{
+					mSMPSecurity->get_UserRightInfo(CString(_T("CPP SecurityTest Module")).AllocSysString(),CString(_T("Sample SecurityTest Setup")).AllocSysString(),CString(_T("Show SmpOEMEvents")).AllocSysString(),&lValue);
+					*pbEnable=lValue;
+				}
+				else if(_T("UsingSmpGridControlMethod") ==strFunctionName)
+				{
+
+					mSMPSecurity->get_UserRightInfo(CString(_T("CPP SecurityTest Module")).AllocSysString(),CString(_T("Sample SecurityTest Setup")).AllocSysString(),CString(_T("Show SmpGrid Control")).AllocSysString(),&lValue);
+					*pbEnable=lValue;
+				}
+			
+			}
+
+			
+		
+		}
+		catch(...)
+		{
+
+		}
+		
+		return S_OK;
+
+		
 	}
 	STDMETHOD(DeleteOldData)(BSTR strSpecifiedDate)
 	{
@@ -186,6 +286,8 @@ public:
 		CComPtr<ISmpOEM> SmpOEM;
 		SmpOEM.CoCreateInstance(CLSID_SmpOEM);
 		SmpOEM->put_InvokeCustomSalesDlg(ID_SALES_CHECKOUT,TRUE);
+          
+		AddMenuInfo();
 
 		return S_OK;
 	}

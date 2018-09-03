@@ -58,6 +58,7 @@ STDMETHODIMP CSMPCPPAddin::GenericReportUsingAttribute()
 	return S_OK;
 }
 
+
 BOOL CSMPCPPAddin::LoadLongResource(CString &str, UINT nID)
 {
 		try
@@ -418,3 +419,82 @@ STDMETHODIMP CSMPCPPAddin::UsingISmpSettingsExInterface()
 	objSmpSettingsExDlg.DoModal();
 	return S_OK;
 }
+
+
+
+
+void CSMPCPPAddin::LoadFunctionName(CStringArray &strFunctionNamesArray)
+{
+   try
+   {
+	   strFunctionNamesArray.Add(_T("UsingISmpOEMEventsInterface"));
+ 
+		strFunctionNamesArray.Add(_T("UsingSmpGridControlMethod"));
+
+   }
+   catch(...)
+   {
+
+
+   }
+   return;
+
+}
+
+void CSMPCPPAddin::AddMenuInfo()
+{
+	try
+	{
+		HRESULT hr;
+		CComPtr<IISmpCommands> SmpCommandsInfo;
+
+		hr=SmpCommandsInfo.CoCreateInstance(CLSID_ISmpCommands);
+
+		if(SUCCEEDED(hr))
+		{
+			CStringArray strFunctionNamesArray;
+
+			LoadFunctionName(strFunctionNamesArray);
+
+			for(register iIndex(0);iIndex<strFunctionNamesArray.GetSize();iIndex++)
+			{
+				long lNoOfCommands=0;
+
+				CString strFunctionName=strFunctionNamesArray.GetAt(iIndex);
+
+				SmpCommandsInfo->get_NoOfCommands(m_lSessionID,strFunctionName.AllocSysString(),&lNoOfCommands); 
+
+				long* plCommands= new long[lNoOfCommands];
+				
+				SmpCommandsInfo->get_MenuCommandEx(m_lSessionID,strFunctionName.AllocSysString(),plCommands);
+
+				CMenuInfo MenuInfo;
+
+				MenuInfo.m_strFunctionName=strFunctionName;
+
+				for(register i=0;i<lNoOfCommands;i++)
+				{
+					MenuInfo.m_CommandIDArray.Add(plCommands[i]);
+				}
+				m_MenuInfoArray.Add(MenuInfo);
+
+				delete[] plCommands;
+			}
+
+		}
+
+
+	}
+	
+	
+
+	catch(...)
+	{
+	
+	}
+
+	return ;
+
+}
+
+

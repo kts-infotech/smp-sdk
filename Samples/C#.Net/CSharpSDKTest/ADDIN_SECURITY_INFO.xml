@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SecurityTestSecurity>
+  <Value>1</Value>
+  <SecurityVer>2</SecurityVer>
+  <Module>
+    <Name>CSharp SecurityTest Module</Name>
+    <Value>1</Value>
+    <Screen>
+      <Name>Security Test Setup</Name>
+      <Value>1</Value>
+      <SubScreen>
+        <Name>Show Settings</Name>
+        <Value>1</Value>
+      </SubScreen>      
+    </Screen>
+  </Module>
+</SecurityTestSecurity>

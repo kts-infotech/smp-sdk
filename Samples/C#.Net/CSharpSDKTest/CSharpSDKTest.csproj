@@ -290,6 +290,12 @@
     <Compile Include="ISettingsDlg.Designer.cs">
       <DependentUpon>ISettingsDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISmpPluginTabDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISmpPluginTabDlg.Designer.cs">
+      <DependentUpon>ISmpPluginTabDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="ISmpReportItemAttributesDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,6 +410,21 @@
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ADDIN_SECURITY_INFO.xml" />
+    <EmbeddedResource Include="ISmpPluginTabDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpPluginTabDlg.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

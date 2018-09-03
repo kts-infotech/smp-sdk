@@ -8,6 +8,8 @@ Imports System.Reflection
 Imports System.Windows.Forms
 Imports System.Drawing
 Imports System.Threading
+Imports System.Collections
+Imports System.Collections.Generic
 
 'using System.Windows.Forms;
 
@@ -27,6 +29,8 @@ Namespace CSharpSDKTest
         Private lPluginTab As Integer
         Private Const OMP_TAB_VIEW_ID As Integer = -100
         Private Const SMP_WM_SIZE As Integer = 5
+        Private m_lSessionID As Long
+        Public m_MenuInfoArray As List(Of CMenuInfo) = New List(Of CMenuInfo)
 
         Private lWindowHandle As System.UInt32
 
@@ -37,10 +41,11 @@ Namespace CSharpSDKTest
             '
             'objReceiptsettings = new CReceiptsettings();
             lPluginTab = -1
+            m_lSessionID = -1
 
         End Sub
 
-
+        
 #Region "Component Category Registration"
 
         <ComRegisterFunction(), ComVisible(False)> _
@@ -92,6 +97,8 @@ Namespace CSharpSDKTest
 
         Public Sub ApplicationLaunched() Implements SalesMatePlusLib.ISmpAddin.ApplicationLaunched
             ' TODO:  Add CAddinDotNet.ApplicationLaunched implementation
+            AddMenuInfo()
+
         End Sub
         Private Sub StartMessageLoop()
             Application.Run(appContext)
@@ -110,6 +117,9 @@ Namespace CSharpSDKTest
 
         Private Sub Initialize(ByVal lSessionID As Integer, ByVal pApp As SmpApp, ByVal bFirstTime As Object) Implements SalesMatePlusLib.ISmpAddin.Initialize
             ' TODO:  Add CAddinDotNet.SalesMatePlusLib.ISmpAddin.Initialize implementation
+
+            m_lSessionID = lSessionID
+
             Dim thisAssembly As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
             'Read the embedded XML menu resource
             Dim rgbxml As Stream = thisAssembly.GetManifestResourceStream("AddinXML.xml")
@@ -121,14 +131,66 @@ Namespace CSharpSDKTest
             Dim doc As New XmlDocument()
             doc.Load(rgbxml)
             Dim strMenuXML As String = doc.InnerXml
+            
+            Dim Securityxml As Stream = thisAssembly.GetManifestResourceStream("VB_ADDIN_SECURITY_INFO.xml")
+            Dim Security As New XmlDocument()
+            Security.Load(Securityxml)
+            Dim strMenuHideXML As String = Security.InnerXml
+
             'MessageBox.Show(strMenuXML);
             Dim bitMapHandle As IntPtr = bmp.GetHbitmap()
             'pApp.SetAddInInfo(lSessionID, 0, strMenuXML, CInt(Fix(bitMapHandle)), CInt(Fix(bitMapHandle)))
             pApp.SetAddInInfo(lSessionID, 0, strMenuXML, bitMapHandle, bitMapHandle)
+            pApp.SetAddinSecurityInfo(lSessionID, strMenuHideXML)
+
         End Sub
 
         Public Sub UpdateAddinCmdUI(ByVal lCommandID As Integer, ByRef pbEnable As Integer) Implements SalesMatePlusLib.ISmpAddin.UpdateAddinCmdUI
             ' TODO:  Add CAddinDotNet.UpdateAddinCmdUI implementation
+
+            Try
+
+                pbEnable = 1
+
+                Dim strFunctionName As String = String.Empty
+
+                For lIndex As Integer = 0 To m_MenuInfoArray.Count - 1
+
+                    For lCommandIndex As Integer = 0 To m_MenuInfoArray(lIndex).m_CommandIDArray.Count - 1
+
+                        If (lCommandID = m_MenuInfoArray(lIndex).m_CommandIDArray(lCommandIndex)) Then
+
+                            strFunctionName = m_MenuInfoArray(lIndex).m_strFunctionName
+
+                            Exit For
+
+                        End If
+
+                    Next
+
+                Next
+
+                Dim mSMPSecurity As ISecurity
+                mSMPSecurity = New SecurityClass()
+                Dim lValue As Integer = -1
+
+                If ("UsingIDatabaseMethods" = strFunctionName) Then
+
+                    lValue = mSMPSecurity.UserRightInfo("VB.Net SecurityTest Module", "Sample SecurityTest Setup", "Show Database")
+                    pbEnable = lValue
+
+                ElseIf ("UsingISalesCheckoutInterface" = strFunctionName) Then
+
+
+                    lValue = mSMPSecurity.UserRightInfo("VB.Net SecurityTest Module", "Sample SecurityTest Setup", "Show Sales Checkout")
+                    pbEnable = lValue
+
+                End If
+
+            Catch ex As Exception
+
+            End Try
+
         End Sub
 
 
@@ -294,6 +356,10 @@ Namespace CSharpSDKTest
             Dim objSmpGridDlg As New SmpGridDlg()
             objSmpGridDlg.ShowDialog()
         End Sub
+        Public Sub UsingISmpPluginTabInterface()
+            Dim objISmpPluginTabDlg As New ISmpPluginTabDlg()
+            objISmpPluginTabDlg.ShowDialog()
+        End Sub
 
 
 #Region "ISmpPluginTabEvents Members"
@@ -333,7 +399,7 @@ Namespace CSharpSDKTest
 
 #End Region
 
-       
+
 
         Public Sub InvokeCustomAccountsMenuDlg1(ByVal iMenuType As Integer) Implements SalesMatePlusLib.ISmpOEMEvents.InvokeCustomAccountsMenuDlg
             Select Case iMenuType
@@ -397,7 +463,7 @@ Namespace CSharpSDKTest
 
         Public Sub InvokeCustomSalesMenuDlg1(ByVal iDialogType As Integer) Implements SalesMatePlusLib.ISmpOEMEvents.InvokeCustomSalesMenuDlg
             Select Case iDialogType
-                
+
                 Case 32810
                     MessageBox.Show("Successfully bypass Add New Stock Item Dlg")
                 Case 32811
@@ -447,5 +513,83 @@ Namespace CSharpSDKTest
 
             End Select
         End Sub
+
+        Public Sub LoadFunctionName(ByRef strFunctionNamesArray As List(Of String))
+
+            Try
+
+                strFunctionNamesArray.Add("UsingIDatabaseMethods")
+
+                strFunctionNamesArray.Add("UsingISalesCheckoutInterface")
+
+            Catch ex As Exception
+
+            End Try
+
+        End Sub
+        Public Sub AddMenuInfo()
+
+            Dim SmpCommandsInfo As IISmpCommands
+            SmpCommandsInfo = New ISmpCommandsClass()
+
+            Try
+
+                Dim strFunctionNamesArray As List(Of String) = New List(Of String)
+
+                LoadFunctionName(strFunctionNamesArray)
+
+                For iIndex As Integer = 0 To strFunctionNamesArray.Count - 1
+
+                    Dim lNoOfCommands As Integer = 0
+
+                    Dim strFunctionName As String = strFunctionNamesArray(iIndex)
+                   
+                    lNoOfCommands = SmpCommandsInfo.NoOfCommands(Convert.ToInt32(m_lSessionID), strFunctionName)
+
+                    Dim plCommands As Integer = 0
+
+                    plCommands = SmpCommandsInfo.MenuCommandEx(Convert.ToInt32(m_lSessionID), strFunctionName)
+
+                    Dim MenuInfo As New CMenuInfo()
+
+                    MenuInfo.m_strFunctionName = strFunctionName
+
+                    For i As Integer = 0 To lNoOfCommands - 1
+
+                        MenuInfo.m_CommandIDArray.Add(plCommands)
+
+                    Next
+
+                    m_MenuInfoArray.Add(MenuInfo)
+
+                Next
+
+            Catch ex As Exception
+
+            End Try
+
+        End Sub
+
     End Class
+
+    Public Class CMenuInfo
+
+        Public m_strFunctionName As String
+        Public m_CommandIDArray As List(Of Integer) = New List(Of Integer)
+        
+        Public Sub New()
+
+        End Sub
+
+
+        Public Sub New(ByVal MenuInfo As CMenuInfo)
+
+            m_strFunctionName = MenuInfo.m_strFunctionName
+
+            m_CommandIDArray.AddRange(MenuInfo.m_CommandIDArray)
+        End Sub
+
+    End Class
+
+
 End Namespace

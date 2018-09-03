@@ -157,7 +157,12 @@
         <ToolBarButtonText> Grid Ctrl</ToolBarButtonText>
         <ToolTip>Invoke Grid Ctrl menu</ToolTip>
       </LeafMenu>
-
+      <LeafMenu>
+        <Name>ISmpPluginTab</Name>
+        <ShortcutKeyIndex>5</ShortcutKeyIndex>
+        <FunctionName>UsingISmpPluginTabInterface</FunctionName>
+        <HelpString>Using ISmpPluginTab's method</HelpString>
+      </LeafMenu>
       <LeafMenu>
         <Name>SmpOEMEvents</Name>
         <ShortcutKeyIndex>5</ShortcutKeyIndex>

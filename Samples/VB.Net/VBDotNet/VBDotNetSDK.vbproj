@@ -313,6 +313,12 @@
     <Compile Include="ISmpHelpDlg.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ISmpPluginTabDlg.Designer.vb">
+      <DependentUpon>ISmpPluginTabDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ISmpPluginTabDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISmpReceiptsettingsDlg.Designer.vb">
       <DependentUpon>ISmpReceiptsettingsDlg.vb</DependentUpon>
     </Compile>
@@ -385,6 +391,26 @@
     <Compile Include="SmpGrid.vb">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ISmpPluginTabDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ISmpPluginTabDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VB_ADDIN_SECURITY_INFO.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\" />

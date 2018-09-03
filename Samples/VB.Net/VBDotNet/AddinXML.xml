@@ -163,7 +163,6 @@
         <ToolBarIndex>0</ToolBarIndex>
         <ToolBarButtonText> ITransactions </ToolBarButtonText>
         <ToolTip>Invoke ITransactions menu</ToolTip>
-        
       </LeafMenu>
       <LeafMenu>
         <Name>SmpGrid</Name>
@@ -173,6 +172,12 @@
         <ToolBarIndex>1</ToolBarIndex>
         <ToolBarButtonText> SmpGrid </ToolBarButtonText>
         <ToolTip>Invoke SmpGrid menu</ToolTip>
+      </LeafMenu>
+      <LeafMenu>
+        <Name>ISmpPluginTab</Name>
+        <ShortcutKeyIndex>5</ShortcutKeyIndex>
+        <FunctionName>UsingISmpPluginTabInterface</FunctionName>
+        <HelpString>Using ISmpPluginTab's method</HelpString>
       </LeafMenu>
     </MainMenu>
 

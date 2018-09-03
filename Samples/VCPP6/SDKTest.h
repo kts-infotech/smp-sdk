@@ -2,7 +2,7 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Wed Feb 14 17:47:00 2018
+/* at Fri Feb 23 15:40:10 2018
  */
 /* Compiler settings for D:\SVN\KTS Projects\SalesMatePlus\Source\SDKV5\Samples\VCPP6\SDKTest.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext

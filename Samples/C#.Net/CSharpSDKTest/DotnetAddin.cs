@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
+using System.Collections.Generic;
 
 //using System.Windows.Forms;
 
@@ -24,7 +25,7 @@ namespace CSharpSDKTest
     [Guid("CA20D230-8AB6-4fe7-B77C-06C3F4D8CE28")]
 
 
-    public class CAddinDotNet : SalesMatePlusLib.ISmpAddin, SalesMatePlusLib.ISmpPluginTabEvents, SalesMatePlusLib.ISmpDialogEvents,SalesMatePlusLib.SmpOEMEvents
+    public class CAddinDotNet : SalesMatePlusLib.ISmpAddin, SalesMatePlusLib.ISmpPluginTabEvents, SalesMatePlusLib.ISmpDialogEvents, SalesMatePlusLib.SmpOEMEvents
     {
         //private Thread AddinFormThread;
         private ApplicationContext appContext = new ApplicationContext();
@@ -32,7 +33,8 @@ namespace CSharpSDKTest
         private const int OMP_TAB_VIEW_ID = -100;
         private const int SMP_WM_SIZE = 5;
         //private System.UInt32 lWindowHandle;
-
+        public List <CMenuInfo> m_MenuInfoArray=new List<CMenuInfo>();       
+        long m_lSessionID;
         //CReceiptsettings objReceiptsettings;
         public CAddinDotNet()
         {
@@ -41,8 +43,10 @@ namespace CSharpSDKTest
             //
             //objReceiptsettings = new CReceiptsettings();
             lPluginTab = -1;
+            m_lSessionID = -1;
 
         }
+
 
 
         #region Component Category Registration
@@ -113,6 +117,7 @@ namespace CSharpSDKTest
         public void ApplicationLaunched()
         {
             // TODO:  Add CAddinDotNet.ApplicationLaunched implementation
+            AddMenuInfo();
         }
         private void StartMessageLoop()
         {
@@ -135,6 +140,8 @@ namespace CSharpSDKTest
 
         void SalesMatePlusLib.ISmpAddin.Initialize(int lSessionID, SmpApp pApp, object bFirstTime)
         {
+            m_lSessionID = lSessionID;
+
             // TODO:  Add CAddinDotNet.SalesMatePlusLib.ISmpAddin.Initialize implementation
             Assembly thisAssembly = Assembly.GetExecutingAssembly();
             //Read the embedded XML menu resource
@@ -147,17 +154,69 @@ namespace CSharpSDKTest
             XmlDocument doc = new XmlDocument();
             doc.Load(rgbxml);
             string strMenuXML = doc.InnerXml;
+
+
+            Stream Hidexml = thisAssembly.GetManifestResourceStream("CSharpSDKTest.ADDIN_SECURITY_INFO.xml");
+            XmlDocument hide = new XmlDocument();
+            hide.Load(Hidexml);
+            string strMenuHide = hide.InnerXml;
+
+            
             //MessageBox.Show(strMenuXML);
             IntPtr bitMapHandle = bmp.GetHbitmap();
             pApp.SetAddInInfo(lSessionID, 0, strMenuXML, (int)bitMapHandle, (int)bitMapHandle);
+            pApp.SetAddinSecurityInfo(lSessionID, strMenuHide);
 
         }
 
         public void UpdateAddinCmdUI(int lCommandID, ref int pbEnable)
         {
-            // TODO:  Add CAddinDotNet.UpdateAddinCmdUI implementation
-        }
+             //TODO:  Add CAddinDotNet.UpdateAddinCmdUI implementation
+            try
+            {
+                pbEnable=1;
 
+                string strFunctionName=string.Empty;
+
+                for(int lIndex=0; lIndex<m_MenuInfoArray.Count; lIndex++)
+                {
+                    for (int lCommandIndex = 0; lCommandIndex < m_MenuInfoArray[lIndex].m_CommandIDArray.Count; lCommandIndex++)
+                    {
+                        if(lCommandID == m_MenuInfoArray[lIndex].m_CommandIDArray[lCommandIndex])
+                        {
+                            strFunctionName=m_MenuInfoArray[lIndex].m_strFunctionName;
+
+                            break;
+                        }
+
+                    }
+                }
+
+                ISecurity mSMPSecurity = new SecurityClass();
+                int lValue=-1;
+
+                if (("UsingISettingsInterface") == strFunctionName)
+                    {
+                        string strCSharpModuleName = "CSharp SecurityTest Module";
+                        string strCSharpModuleSection = "Security Test Setup";
+                        string strLeafNodeName = "Show Settings";
+                        try
+                        {
+                            lValue = mSMPSecurity.get_UserRightInfo(strCSharpModuleName, strCSharpModuleSection, strLeafNodeName);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        pbEnable=lValue;
+                    }
+                    
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.ToString());
+            }
+           
+        }
 
         public void Uninitialize(int lSessionID)
         {
@@ -175,14 +234,14 @@ namespace CSharpSDKTest
         public void UsingISmpReceiptSettingsInterface()
         {
             ReceiptsettingsDlg objReceiptsettingsDlg = new ReceiptsettingsDlg();
-            
+
             objReceiptsettingsDlg.ShowDialog();
         }
 
         public void UsingISmpReportSettingsInterface()
         {
             ISmpReportSettingDlg objReportSettingDlg = new ISmpReportSettingDlg();
-            
+
             objReportSettingDlg.ShowDialog();
         }
 
@@ -280,7 +339,7 @@ namespace CSharpSDKTest
 
         public void UsingISmpFrameInterface()
         {
-            ISmpFrameDlg objFrameDlg=new ISmpFrameDlg();
+            ISmpFrameDlg objFrameDlg = new ISmpFrameDlg();
 
             objFrameDlg.ShowDialog();
         }
@@ -294,7 +353,7 @@ namespace CSharpSDKTest
 
         public void UsingISmpAppInterface()
         {
-            ISmpAppDlg objSmpAppDlg=new ISmpAppDlg();
+            ISmpAppDlg objSmpAppDlg = new ISmpAppDlg();
 
             objSmpAppDlg.ShowDialog();
 
@@ -317,6 +376,11 @@ namespace CSharpSDKTest
             ISecurityDlg objISecurityDlg = new ISecurityDlg();
             objISecurityDlg.ShowDialog();
         }
+        public void UsingISmpPluginTabInterface()
+        {
+            ISmpPluginTabDlg objISmpPluginTab = new ISmpPluginTabDlg();
+            objISmpPluginTab.ShowDialog();
+        }
 
         public void GenericReportUsingMethod()
         {
@@ -334,7 +398,7 @@ namespace CSharpSDKTest
             SmpGridDlg objSmpGridDlg = new SmpGridDlg();
             objSmpGridDlg.ShowDialog();
 
-            
+
 
         }
         public void UsingIGridInterface()
@@ -554,5 +618,86 @@ namespace CSharpSDKTest
         }
 
         #endregion
+
+        void LoadFunctionName(ref List<string> strFunctionNamesArray)
+        {
+            try
+            {
+                //strFunctionNamesArray.Add("UsingIAccountsInterface");
+
+                strFunctionNamesArray.Add("UsingISettingsInterface");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return;
+
+        }
+
+        public void AddMenuInfo()
+        {
+            IISmpCommands SmpCommandsInfo = new ISmpCommandsClass();
+
+            try
+            {
+
+                    List<string> strFunctionNamesArray = new List<string>();
+
+                    LoadFunctionName(ref strFunctionNamesArray);
+
+                    for(int iIndex=0;iIndex<strFunctionNamesArray.Count;iIndex++)
+                    {
+                        int lNoOfCommands=0;
+
+                        string strFunctionName=strFunctionNamesArray[iIndex];
+
+                        lNoOfCommands = SmpCommandsInfo.get_NoOfCommands(Convert.ToInt32(m_lSessionID), strFunctionName);
+
+                        int plCommands = 0;
+
+                        plCommands = SmpCommandsInfo.get_MenuCommandEx(Convert.ToInt32(m_lSessionID), strFunctionName);
+
+                        CMenuInfo MenuInfo=new CMenuInfo();
+
+                        MenuInfo.m_strFunctionName=strFunctionName;
+
+                        for(int i=0;i<lNoOfCommands;i++)
+                        {
+                         
+                            MenuInfo.m_CommandIDArray.Add(plCommands);
+                        }
+                        m_MenuInfoArray.Add(MenuInfo);
+                       
+                    }
+              
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.ToString());
+            }
+
+
+            }
+        }
+        public class CMenuInfo
+        {
+
+            public string m_strFunctionName;
+            public List<int> m_CommandIDArray=new List<int>();
+
+            public CMenuInfo()
+            {
+            }
+
+            public CMenuInfo(CMenuInfo MenuInfo)
+            {
+                m_strFunctionName = MenuInfo.m_strFunctionName;
+
+                m_CommandIDArray.AddRange(MenuInfo.m_CommandIDArray);
+            }
+
+        }
     }
-}
+
